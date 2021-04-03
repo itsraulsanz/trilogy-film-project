@@ -1,0 +1,24 @@
+header {
+    height: 20%;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+main {
+    height: 75%;
+}
+
+footer {
+    height: 5%;
+    background-color: black;
+}
+
+h5 { 
+    color: white;
+}
+
