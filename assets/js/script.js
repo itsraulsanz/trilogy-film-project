@@ -1,4 +1,4 @@
-//Getting the movie criteria
+// Getting the movie criteria
 function getTheMovieDatabase() {
   var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
   var type = "movie"; // or "tv"
@@ -13,7 +13,7 @@ function getTheMovieDatabase() {
   // Zombies ID: 12377
   // Monsters ID: 1299
   // Gore ID: 10292
-  // Reigion ID: 11001
+  // Religion ID: 11001
 
   fetch(
     "https://api.themoviedb.org/3/discover/" +
@@ -38,13 +38,6 @@ function getTheMovieDatabase() {
 getTheMovieDatabase();
 
 
-
-
-
-
-
-
-
 // OPEN MOVIE DATABASE
 
 function getOpenMovieDatabaseAPI () {
@@ -58,10 +51,28 @@ function getOpenMovieDatabaseAPI () {
     return response.json();
   })
   .then(function (data) {
-  console.log('OMDB', data)})
+  console.log('OMDB', data)
+
+  trickorTreat (data);
+
+})
 }
 
 getOpenMovieDatabaseAPI();
 
 
 
+// TRICK OR TREAT FUNCTION
+function trickorTreat (data) {
+  var IMDBscore = data.Ratings[0].value;
+  var rottenTomatoesScore = data.Ratings[1].value;
+  var metacriticScore = data.Ratings[2].value;
+  var trickOrTreatInput = document.getElementById("trickortreat");
+  if (IMDBscore > parseInt("5.0/10", 5) && rottenTomatoesScore > parseInt("50%", 50) && metacriticScore > parseInt("50/100", 50)) {
+    trickOrTreatInput.textContent = "TREAT!";
+  } else if (IMDBscore < parseInt("5.0/10", 5) && rottenTomatoesScore < parseInt("50%", 50) && metacriticScore < parseInt("50/100", 50)) { 
+    trickOrTreatInput.textContent = "TRICK!";
+  } else {
+    trickOrTreatInput.textContent = "JURY'S OUT - APPROACH WITH CAUTION!";
+  }
+}
