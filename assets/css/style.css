@@ -1,3 +1,14 @@
+h1 {
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 15px 0 15px 0;
+}
+
+h5 {
+    font-size: 1.2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 header {
     height: 20%;
     background-color: black;
@@ -9,16 +20,20 @@ header {
     margin-bottom: 10px;
 }
 
+nav {
+    font-size: 30px;
+}
+
 main {
     height: 75%;
 }
 
 footer {
     height: 5%;
+    padding: 10px;
     background-color: black;
     text-align: center;
     color: white;
-    font-size: 15px;
 }
 
 
@@ -27,4 +42,22 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.movieListContainer {
+    margin: 40px;
+}
+
+.movieSelectorContainer {
+    margin: 40px;
+    background-color: black;
+}
+
+.movieSelectorItem {
+    position: relative;
+    border: white solid 1px;
+}
+
+.movieselector {
+    background-color: black;
 }
