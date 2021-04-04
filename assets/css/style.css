@@ -1,63 +1,98 @@
 h1 {
-    font-family: 'Creepster', cursive;
-    margin: 0;
-    padding: 15px 0 15px 0;
+  font-family: "Creepster", cursive;
+  margin: 0;
+  padding: 15px 0 15px 0;
 }
 
 h5 {
-    font-size: 1.2rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 header {
-    height: 20%;
-    background-color: black;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 50px;
-    margin-bottom: 10px;
+  height: 20%;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
 nav {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 main {
-    height: 75%;
+  height: 75%;
 }
 
 footer {
-    height: 5%;
-    padding: 10px;
-    background-color: black;
-    text-align: center;
-    color: white;
+  padding: 10px;
+  background-color: black;
+  text-align: center;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-
 .selected-movie {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .movieListContainer {
-    margin: 40px;
+  margin: 40px;
 }
 
 .movieSelectorContainer {
-    margin: 40px;
-    background-color: black;
+  margin: 40px;
+  background-color: black;
 }
 
 .movieSelectorItem {
-    position: relative;
-    border: white solid 1px;
+  position: relative;
+  border: white solid 1px;
 }
 
-.movieselector {
-    background-color: black;
+.movieselector,
+.dark-background {
+  background-color: black;
+  color: white;
+}
+
+.start-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.btn {
+  background-color: #ef6c00 !important;
+  width: 20% !important;
+  min-height: 50px !important;
+  margin-bottom: 10px;
+  line-height: 36px;
+  padding: 8px 20px !important;
+  min-width: 180px;
+}
+
+.btn:hover {
+  background-color: #ffa726 !important;
+}
+
+.start h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+    margin-bottom: 30px;
 }
