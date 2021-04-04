@@ -36,12 +36,6 @@ getTheMovieDatabase();
 
 
 
-
-
-
-
-
-
 // OPEN MOVIE DATABASE
 
 function getOpenMovieDatabaseAPI () {
@@ -55,10 +49,28 @@ function getOpenMovieDatabaseAPI () {
     return response.json();
   })
   .then(function (data) {
-  console.log('OMDB', data)})
+  console.log('OMDB', data)
+
+  trickorTreat (data);
+
+})
 }
 
 getOpenMovieDatabaseAPI();
 
 
 
+// TRICK OR TREAT FUNCTION
+function trickorTreat (data) {
+  var IMDBscore = data.Ratings[0].value;
+  var rottenTomatoesScore = data.Ratings[1].value;
+  var metacriticScore = data.Ratings[2].value;
+  var trickOrTreatInput = document.getElementById("trickortreat");
+  if (IMDBscore > parseInt("5.0/10", 5) && rottenTomatoesScore > parseInt("50%", 50) && metacriticScore > parseInt("50/100", 50)) {
+    trickOrTreatInput.textContent = "TREAT!";
+  } else if (IMDBscore < parseInt("5.0/10", 5) && rottenTomatoesScore < parseInt("50%", 50) && metacriticScore < parseInt("50/100", 50)) { 
+    trickOrTreatInput.textContent = "TRICK!";
+  } else {
+    trickOrTreatInput.textContent = "JURY'S OUT - APPROACH WITH CAUTION!";
+  }
+}
