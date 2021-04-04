@@ -9,6 +9,10 @@ h5 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
+a {
+  color: white;
+}
+
 header {
   height: 20%;
   background-color: black;
@@ -20,12 +24,15 @@ header {
   margin-bottom: 10px;
 }
 
-nav {
-  font-size: 30px;
-}
-
 main {
   height: 75%;
+}
+
+.tab a.active {
+  color: #fff;
+  border-bottom: #ef6c00 solid 2px;
+  background-color: black;
+  font-size: 1.5rem;
 }
 
 footer {
@@ -67,11 +74,11 @@ footer {
 }
 
 .start-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
 }
 
 .btn {
@@ -94,5 +101,5 @@ footer {
 }
 
 .logo {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
