@@ -28,8 +28,37 @@ function getTheMovieDatabase() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log("Movie DB", data);
     });
 }
 
 getTheMovieDatabase();
+
+
+
+
+
+
+
+
+
+// OPEN MOVIE DATABASE
+
+function getOpenMovieDatabaseAPI () {
+  var API_KEY = "930706b3";
+  var title = "the ring";
+  var year = "2002";
+  var requestURL = `http://www.omdbapi.com/?t=${title}&y=${year}&apikey=${API_KEY}`;
+
+  fetch(requestURL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+  console.log('OMDB', data)})
+}
+
+getOpenMovieDatabaseAPI();
+
+
+
