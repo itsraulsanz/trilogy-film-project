@@ -3,54 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
     <title>HAMMERED HORROR</title>
 </head>
 <body>
-   <header>
-        <h1> HAMMERED HORROR</h1>
-
-        <div>
-                <nav>Movies / Series</nav>
-        </div>
-    </header>
-
-
+   <header>HAMMERED HORROR</header>
 
    <!-- Selected movie -->
-    <div id="movie">
 
-        <container>
-            <div>
-                <title>title</title>
+   <div class="selected-movie">
+        <div class="row">
+        <div class="col s12">
+            <div class="card large hoverable">
+                <div class="card-image">
+                    <img id="poster" src="https://images-na.ssl-images-amazon.com/images/I/815jknDobSL._AC_SY679_.jpg">
+                    <span class="card-title" id="film-title">Film Title</span>
+                </div>
+                <div class="card-content">
+                    <p>Trick or Treat?:<span id="trickortreat"></span></p>
+                    <p>Director:<span id="director"></span></p>
+                    <p>Age Certificate:<span id="age"></span></p>
+                    <p>Availble on:<span id="watchon"></span></p>
+                    <p>Film synopsis:<span id="synopsis"></span></p>
+                </div>
+
+                <div class="card-action">
+                    <a href="#" id="save">Save to My Films</a>
+                </div>
             </div>
-
-            <figure>
-                <img src="" alt="">
-            </figure>
-
-            <div>
-                <div id="trickortreat"></div>
-                <div id="director"></div>
-                <div id="watch"></div>
-                <div id="age"></div>
-            </div>
-
-            
-
-            <div id="synopsis"></div>
-    
-        </container>
-
+        </div>
+        </div>
     </div>
+        
+   <footer>Trilogy Film Project</footer>
 
-
-   <footer>
-       <h5>Trilogy Film Project</h5>
-    </footer>
-
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/filmsCriteria.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

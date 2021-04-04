@@ -1,12 +1,12 @@
 header {
     height: 20%;
     background-color: black;
-}
-
-h1 {
+    text-align: center;
     color: white;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 
 main {
@@ -16,9 +16,15 @@ main {
 footer {
     height: 5%;
     background-color: black;
-}
-
-h5 { 
+    text-align: center;
     color: white;
+    font-size: 15px;
 }
 
+
+.selected-movie {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
