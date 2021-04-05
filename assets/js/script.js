@@ -159,3 +159,29 @@ function displaySelectedMovie(data) {
   
 
 }
+
+
+
+
+function runModal () {
+var errorModal = document.getElementById("errorModal");
+var modalSpan = document.getElementById("close"[0]);
+
+// Button to Test Modal - remove this later...
+var modalBtn = document.getElementById("modalBtn");
+modalBtn.onclick = function () {
+  errorModal.style.display = "block";
+}
+
+modalSpan.onclick = function () {
+  errorModal.style.display = "none";
+
+}
+
+window.onclick = function(event) {
+if (event.target == modal) {
+  modal.style.display = "none";
+}}
+}
+
+runModal()
