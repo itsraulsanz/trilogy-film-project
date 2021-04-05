@@ -9,6 +9,10 @@ h5 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
+a {
+  color: white;
+}
+
 header {
   height: 20%;
   background-color: black;
@@ -20,12 +24,15 @@ header {
   margin-bottom: 10px;
 }
 
-nav {
-  font-size: 30px;
-}
-
 main {
   height: 75%;
+}
+
+.tab a.active {
+  color: #fff;
+  border-bottom: #ef6c00 solid 2px;
+  background-color: black;
+  font-size: 1.5rem;
 }
 
 footer {
@@ -95,6 +102,7 @@ footer {
 
 .logo {
   margin-bottom: 30px;
+<<<<<<< HEAD
 }
 
 .card.small .card-content,
@@ -128,4 +136,14 @@ footer {
 }
 .noUi-active .noUi-tooltip {
   display: block;
+=======
+>>>>>>> 49a8cb071d3a6ba59d11da8931e49ae3fd4713c6
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
 }
