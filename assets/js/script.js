@@ -73,6 +73,13 @@ function trickorTreat (data) {
   } else if (IMDBscore < parseInt("5.0/10", 5) && rottenTomatoesScore < parseInt("50%", 50) && metacriticScore < parseInt("50/100", 50)) { 
     trickOrTreatInput.textContent = "TRICK!";
   } else {
-    trickOrTreatInput.textContent = "JURY'S OUT - APPROACH WITH CAUTION!";
+    trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
   }
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems, options);
+});
