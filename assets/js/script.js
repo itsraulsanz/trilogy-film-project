@@ -102,11 +102,11 @@ function getOpenMovieDatabaseAPI() {
       console.log("OMDB", data);
 
       trickorTreat(data);
+      displaySelectedMovie(data)
     });
 }
 
 getOpenMovieDatabaseAPI();
-
 
 
 // TRICK OR TREAT FUNCTION
@@ -115,18 +115,73 @@ function trickorTreat (data) {
   var rottenTomatoesScore = data.Ratings[1].value;
   var metacriticScore = data.Ratings[2].value;
   var trickOrTreatInput = document.getElementById("trickortreat");
-  if (IMDBscore > parseInt("5.0/10", 5) && rottenTomatoesScore > parseInt("50%", 50) && metacriticScore > parseInt("50/100", 50)) {
-    trickOrTreatInput.textContent = "TREAT!";
-  } else if (IMDBscore < parseInt("5.0/10", 5) && rottenTomatoesScore < parseInt("50%", 50) && metacriticScore < parseInt("50/100", 50)) { 
-    trickOrTreatInput.textContent = "TRICK!";
+  if ((IMDBscore > parseInt("5.0/10", 5/10) && rottenTomatoesScore > parseInt("50%", 50/100) && metacriticScore > parseInt("50/100", 50/100))) {
+    trickOrTreatInput.textContent = " TREAT!";
+    trickOrTreatInput.setAttribute("id", "treat");
+  } else if ((IMDBscore < parseInt("5.0/10", 5/10) && rottenTomatoesScore < parseInt("50%", 50/100) && metacriticScore < parseInt("50/100", 50/100))) { 
+    trickOrTreatInput.textContent = " TRICK!";
+    trickOrTreatInput.setAttribute("id", "trick");
   } else {
     trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
+    trickOrTreatInput.setAttribute("id", "caution");
   }
 }
 
 
+function displaySelectedMovie(data) {
+  console.log(data, "displayselectedmovie")
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('select');
-  var instances = M.FormSelect.init(elems, options);
-});
+  var filmTitle = document.getElementById("film-title");
+  filmTitle.textContent = data.Title;
+  var posterImage = document.getElementById("poster");
+  var posterURL = data.Poster;
+  posterImage.setAttribute("src", posterURL);
+  var directorName = document.getElementById("director");
+  directorName.textContent = data.Director;
+  directorName.style.color = "orange";
+  var ageCertificate = document.getElementById("age");
+  ageCertificate.textContent = data.Rated;
+  ageCertificate.style.color = "orange";
+  var countryLanguage = document.getElementById("country");
+  countryLanguage.textContent = data.Country + " / " + data.Language;
+  countryLanguage.style.color = "orange";
+  var runTime = document.getElementById("runtime");
+  runTime.textContent = data.Runtime;
+  runTime.style.color = "orange";
+  var yearReleased = document.getElementById("year-released");
+  yearReleased.textContent = data.Released;
+  yearReleased.style.color = "orange";
+  var availableOn = document.getElementById("watchon");
+  availableOn.textContent;
+  var filmSynopsis = document.getElementById("synopsis");
+  filmSynopsis.textContent = data.Plot;
+  filmSynopsis.style.color = "black";
+  
+
+}
+
+
+
+
+function runModal () {
+var errorModal = document.getElementById("errorModal");
+var modalSpan = document.getElementById("close"[0]);
+
+// Button to Test Modal - remove this later...
+var modalBtn = document.getElementById("modalBtn");
+modalBtn.onclick = function () {
+  errorModal.style.display = "block";
+}
+
+modalSpan.onclick = function () {
+  errorModal.style.display = "none";
+
+}
+
+window.onclick = function(event) {
+if (event.target == modal) {
+  modal.style.display = "none";
+}}
+}
+
+runModal()
