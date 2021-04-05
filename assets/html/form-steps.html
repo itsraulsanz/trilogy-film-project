@@ -16,10 +16,13 @@
     <title>HAMMERED HORROR</title>
   </head>
   <body class="dark-background">
+    <header>
+      <h1>HAMMERED HORROR</h1>
+    </header>
     <!-- Type -->
     <div class="form-wrapper" id="type">
       <form>
-        <label><h1>Type:</h1></label>
+        <label><h3>Type:</h3></label>
         <p>
           <label>
             <input name="type" id="movie" type="radio" value="movie" />
@@ -28,7 +31,7 @@
         </p>
         <p>
           <label>
-            <input name="type" id="tv" type="radio" value="tv"/>
+            <input name="type" id="tv" type="radio" value="tv" />
             <span>Series</span>
           </label>
         </p>
@@ -38,22 +41,22 @@
     <!-- SubGenre -->
     <div class="form-wrapper" id="subgenre">
       <form>
-        <label><h1>SubGenre:</h1></label>
+        <label><h3>SubGenre:</h3></label>
         <p>
           <label>
-            <input name="subgenre" value="157314" type="radio"/>
+            <input name="subgenre" value="157314" type="radio" />
             <span>Psychological</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="subgenre" value="270348" type="radio"/>
+            <input name="subgenre" value="270348" type="radio" />
             <span>Post apocalyptic</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="subgenre" value="12339" type="radio"/>
+            <input name="subgenre" value="12339" type="radio" />
             <span>Slasher (Serial Killer)</span>
           </label>
         </p>
@@ -99,7 +102,7 @@
     <!-- Years -->
     <div class="form-wrapper" id="years">
       <form>
-        <label><h1>Years:</h1></label>
+        <label><h3>Years:</h3></label>
         <p>
           <label>
             <input name="years" value="2021" type="radio" />
@@ -160,7 +163,7 @@
     <!-- Language -->
     <div class="form-wrapper" id="language">
       <form>
-        <label><h1>Language:</h1></label>
+        <label><h3>Language:</h3></label>
         <p>
           <label>
             <input name="language" value="en" type="radio" />
@@ -274,8 +277,8 @@
     </div>
 
     <!-- Movie Selector -->
-    <div class="movieSelectorContainer" id="movieselector">
-      
+    <div class="movieSelectorContainer">
+      <div class="row movieListContainer" id="movieselector"></div>
     </div>
 
     <footer>

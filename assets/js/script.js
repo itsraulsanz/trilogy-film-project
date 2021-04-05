@@ -12,10 +12,9 @@ subgenreEl.style.display = "none";
 yearsEl.style.display = "none";
 languageEl.style.display = "none";
 movieselectorEl.style.display = "none";
-
 }
 
-hideEls
+hideEls();
  
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
 var urlForm = "https://api.themoviedb.org/3/discover/";
@@ -108,15 +107,13 @@ function getTheMovieDatabase() {
  
 function printItemList(movieData) {
  console.log(movieData);
- var movieSelectorContainerEl = document.querySelector("#movieselector");
+ var rowEl = document.querySelector("#movieselector");
  
  for (let i = 0; i < movieData.length; i++) {
-   var itemWrapperEl = document.createElement("div");
-   itemWrapperEl.classList.add("row","movieListContainer");
    var itemCardEl = document.createElement("div");
    itemCardEl.classList.add("col", "s6", "m4", "l2");
    var cardEl = document.createElement("div");
-   cardEl.classList.add("card");
+   cardEl.classList.add("card", "itemSelector");
    var itemCardImageEl = document.createElement("div");
    itemCardImageEl.classList.add("card-image", "movieSelectorItem");
  
@@ -127,20 +124,18 @@ function printItemList(movieData) {
    );
    itemCardImageEl.appendChild(itemImageEl);
  
-   var itemTitleEl = document.createElement("span");
-   itemTitleEl.classList.add("card-title");
+   var itemTitleEl = document.createElement("div");
+   itemTitleEl.classList.add("card-title", "itemTitle");
    itemTitleEl.textContent = movieData[i].title;
-   itemCardImageEl.appendChild(itemTitleEl);
+   itemCardEl.appendChild(itemTitleEl);
  
-   itemWrapperEl.addEventListener("click", function (event) {
+   cardEl.addEventListener("click", function (event) {
      console.log("clicked");
      getOpenMovieDatabaseAPI();
    });
    cardEl.appendChild(itemCardImageEl);
    itemCardEl.appendChild(cardEl);
-   itemWrapperEl.appendChild(itemCardEl);
-   movieSelectorContainerEl.appendChild(itemWrapperEl);
-
+   rowEl.appendChild(itemCardEl);
  }
 }
 
