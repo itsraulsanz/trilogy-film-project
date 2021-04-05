@@ -140,6 +140,7 @@ function printItemList(movieData) {
    itemCardEl.appendChild(cardEl);
    itemWrapperEl.appendChild(itemCardEl);
    movieSelectorContainerEl.appendChild(itemWrapperEl);
+
  }
 }
 
@@ -184,10 +185,12 @@ function trickorTreat (data) {
     trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
     trickOrTreatInput.setAttribute("id", "caution");
   }
- }
+}
   
+
+// DISPLAY SELECTED MOVIE
   
- function displaySelectedMovie(data) {
+function displaySelectedMovie(data) {
   console.log(data, "displayselectedmovie")
   
   var filmTitle = document.getElementById("film-title");
@@ -241,3 +244,4 @@ function runModal () {
 }
   
 runModal()
+
