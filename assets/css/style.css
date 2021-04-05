@@ -1,12 +1,14 @@
-h1 {
+h1, h2, h3, h4, h5 {
   font-family: "Creepster", cursive;
+}
+
+h1 {
   margin: 0;
   padding: 15px 0 15px 0;
 }
 
 h5 {
   font-size: 1.2rem;
-  font-family: "Creepster", cursive;
 }
 
 a {
@@ -72,6 +74,22 @@ footer {
   color: white;
 }
 
+.row .col {
+  padding: 1rem 1rem !important;
+}
+
+.itemTitle {
+  margin-bottom: 10px;
+}
+
+.itemSelector:hover {
+  cursor: pointer;
+}
+
+.itemSelector:hover {
+  filter: opacity(0.5);
+}
+
 .start-wrapper {
   display: flex;
   justify-content: center;
@@ -101,6 +119,39 @@ footer {
 
 .logo {
   margin-bottom: 30px;
+}
+
+.card.small .card-content,
+.card.medium .card-content,
+.card.large .card-content {
+  overflow: visible;
+}
+
+.card {
+  margin: auto;
+}
+
+.card.large {
+  height: 175px;
+  width: 216px;
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  margin: 0 auto;
+}
+.card .card-content .card-title {
+  text-align: center;
+}
+
+.divider {
+  height: 3px;
+}
+
+.noUi-tooltip {
+  display: none;
+}
+.noUi-active .noUi-tooltip {
+  display: block;
 }
 
 .form-wrapper {
@@ -169,8 +220,6 @@ footer {
 .card-content {
     line-height: 2;
 }
-
-
 
 .modal {
     display: none;
