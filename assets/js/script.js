@@ -117,13 +117,13 @@ function trickorTreat (data) {
   var trickOrTreatInput = document.getElementById("trickortreat");
   if ((IMDBscore > parseInt("5.0/10", 5/10) && rottenTomatoesScore > parseInt("50%", 50/100) && metacriticScore > parseInt("50/100", 50/100))) {
     trickOrTreatInput.textContent = " TREAT!";
-    trickOrTreatInput.style.backgroundColor = "green";
+    trickOrTreatInput.setAttribute("id", "treat");
   } else if ((IMDBscore < parseInt("5.0/10", 5/10) && rottenTomatoesScore < parseInt("50%", 50/100) && metacriticScore < parseInt("50/100", 50/100))) { 
     trickOrTreatInput.textContent = " TRICK!";
-    trickOrTreatInput.style.backgroundColor = "red";
+    trickOrTreatInput.setAttribute("id", "trick");
   } else {
     trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
-    trickOrTreatInput.style.backgroundColor = "yellow";
+    trickOrTreatInput.setAttribute("id", "caution");
   }
 }
 

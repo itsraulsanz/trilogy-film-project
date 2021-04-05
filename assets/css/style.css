@@ -19,7 +19,6 @@ header {
   text-align: center;
   color: white;
   font-weight: bold;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 50px;
   margin-bottom: 10px;
 }
@@ -110,4 +109,63 @@ footer {
   align-items: center;
   text-align: center;
   min-height: 50vh;
+}
+
+
+.creepy {
+    font-family: "Creepster", cursive;
+    margin: 0;
+    padding: 15px 0 15px 0;
+  }
+
+  #film-title {
+      font-size: 50px;
+      color: orange;
+  }
+
+  .responsive {
+    width: auto;
+    height: 60vh;
+    object-fit: contain;
+    background-color: black;
+  }
+
+  #caution {
+      background-color: yellow;
+      color: black;
+      font-family: "Creepster", cursive;
+      padding: 4px;
+      border-style: groove;
+      border-width: 2px;
+      border-color: black;
+      margin-bottom: 5px;
+      border-radius: 25px;
+  } 
+
+  #treat {
+    background-color: greenyellow;
+    color: black;
+    font-family: "Creepster", cursive;
+    padding: 4px;
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 5px;
+    border-radius: 25px;
+} 
+
+#trick {
+    background-color: red;
+    color: black;
+    font-family: "Creepster", cursive;
+    padding: 4px;
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 5px;
+    border-radius: 25px;
+} 
+
+.card-content {
+    line-height: 2;
 }
