@@ -67,11 +67,11 @@ footer {
 }
 
 .start-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
 }
 
 .btn {
@@ -94,5 +94,38 @@ footer {
 }
 
 .logo {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.card.small .card-content,
+.card.medium .card-content,
+.card.large .card-content {
+  overflow: visible;
+}
+
+.card {
+  margin: auto;
+}
+
+.card.large {
+  height: 175px;
+  width: 216px;
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  margin: 0 auto;
+}
+.card .card-content .card-title {
+  text-align: center;
+}
+
+.divider {
+  height: 3px;
+}
+
+.noUi-tooltip {
+  display: none;
+}
+.noUi-active .noUi-tooltip {
+  display: block;
 }
