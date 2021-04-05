@@ -103,3 +103,11 @@ footer {
 .logo {
   margin-bottom: 30px;
 }
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
