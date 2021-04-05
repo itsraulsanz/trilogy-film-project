@@ -220,24 +220,24 @@ function trickorTreat (data) {
   
 // ERROR MODAL
 function runModal () {
-var errorModal = document.getElementById("errorModal");
-var modalSpan = document.getElementsByClassName("close")[0];
+  var errorModal = document.getElementById("errorModal");
+  var modalSpan = document.getElementsByClassName("close")[0];
 
-// Button to Test Modal - remove this later...
-var modalBtn = document.getElementById("modalBtn");
-modalBtn.onclick = function() {
-  errorModal.style.display = "block";
-}
+  // Button to Test Modal - remove this later...
+  var modalBtn = document.getElementById("modalBtn");
+  modalBtn.onclick = function() {
+    errorModal.style.display = "block";
+  }
 
-modalSpan.onclick = function() {
-  errorModal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == errorModal) {
+  modalSpan.onclick = function() {
     errorModal.style.display = "none";
   }
-}
+
+  window.onclick = function(event) {
+    if (event.target == errorModal) {
+      errorModal.style.display = "none";
+    }
+  }
 }
   
 runModal()
