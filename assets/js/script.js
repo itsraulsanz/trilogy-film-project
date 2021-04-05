@@ -180,10 +180,12 @@ function trickorTreat (data) {
     trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
     trickOrTreatInput.setAttribute("id", "caution");
   }
- }
+}
   
+
+// DISPLAY SELECTED MOVIE
   
- function displaySelectedMovie(data) {
+function displaySelectedMovie(data) {
   console.log(data, "displayselectedmovie")
   
   var filmTitle = document.getElementById("film-title");
@@ -214,30 +216,27 @@ function trickorTreat (data) {
   
 }
   
-  
-  
-  
+// ERROR MODAL
 function runModal () {
- var errorModal = document.getElementById("errorModal");
- var modalSpan = document.getElementById("close"[0]);
-  
- // Button to Test Modal - remove this later...
- var modalBtn = document.getElementById("modalBtn");
- modalBtn.onclick = function () {
-  errorModal.style.display = "block";
- }
-  
- modalSpan.onclick = function () {
-  errorModal.style.display = "none";
-  
- }
-  
- window.onclick = function(event) {
- if (event.target == modal) {
-  modal.style.display = "none";
- }}
+  var errorModal = document.getElementById("errorModal");
+  var modalSpan = document.getElementsByClassName("close")[0];
+
+  // Button to Test Modal - remove this later...
+  var modalBtn = document.getElementById("modalBtn");
+  modalBtn.onclick = function() {
+    errorModal.style.display = "block";
+  }
+
+  modalSpan.onclick = function() {
+    errorModal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == errorModal) {
+      errorModal.style.display = "none";
+    }
+  }
 }
   
 runModal()
 
- 
