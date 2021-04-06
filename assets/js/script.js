@@ -5,7 +5,9 @@ var typeEl = document.querySelector("#type");
 var subgenreEl = document.querySelector("#subgenre");
 var yearsEl = document.querySelector("#years");
 var languageEl = document.querySelector("#language");
-var movieselectorEl = document.querySelector("#movieselector");
+var movieselectorEl = document.getElementById("movieselector");
+var movieSelectedScreen = document.querySelector('.selected-movie')
+movieSelectedScreen.style.display = "none"
  
 function hideEls () {
 subgenreEl.style.display = "none";
@@ -118,12 +120,17 @@ function printItemList(movieData) {
    itemCardImageEl.classList.add("card-image", "movieSelectorItem");
  
    var itemImageEl = document.createElement("img");
+   var posterUrl = "https://image.tmdb.org/t/p/w500/" + movieData[i].poster_path
    itemImageEl.setAttribute(
      "src",
-     "https://image.tmdb.org/t/p/w500/" + movieData[i].poster_path
+     posterUrl
    );
    itemCardImageEl.appendChild(itemImageEl);
- 
+
+   console.log(movieData[i])
+   console.log(movieData[i].release_date.slice(0, 4))
+   const title = movieData[i].title;
+   const year = movieData[i].release_date.slice(0, 4); 
    var itemTitleEl = document.createElement("div");
    itemTitleEl.classList.add("card-title", "itemTitle");
    itemTitleEl.textContent = movieData[i].title;
@@ -131,7 +138,7 @@ function printItemList(movieData) {
  
    cardEl.addEventListener("click", function (event) {
      console.log("clicked");
-     getOpenMovieDatabaseAPI();
+     getOpenMovieDatabaseAPI(title, year);
    });
    cardEl.appendChild(itemCardImageEl);
    itemCardEl.appendChild(cardEl);
@@ -139,14 +146,22 @@ function printItemList(movieData) {
  }
 }
 
+function displayMovieSelected(){
 
+}
 
 // OPEN MOVIE DATABASE
  
-function getOpenMovieDatabaseAPI() {
+function getOpenMovieDatabaseAPI(title, year) {
+  movieselectorEl.style.display = "none";
+  movieSelectedScreen.removeAttribute("style");
+  console.log(title)
+  console.log(year)
+  // movieselectorEl.style.display = "none";
+  // movieSelectedScreen.style.display = "block"
   var API_KEY = "930706b3";
-  var title = "the ring";
-  var year = "2002";
+  // var title = "the ring";
+  // var year = "2002";
   var requestURL = `http://www.omdbapi.com/?t=${title}&y=${year}&apikey=${API_KEY}`;
   
   fetch(requestURL)
@@ -161,11 +176,12 @@ function getOpenMovieDatabaseAPI() {
     });
 }
   
-getOpenMovieDatabaseAPI();
+// getOpenMovieDatabaseAPI();
   
   
 // TRICK OR TREAT FUNCTION
 function trickorTreat (data) {
+  console.log(data)
   var IMDBscore = data.Ratings[0].value;
   var rottenTomatoesScore = data.Ratings[1].value;
   var metacriticScore = data.Ratings[2].value;
@@ -215,28 +231,5 @@ function displaySelectedMovie(data) {
   filmSynopsis.style.color = "black";
   
 }
-  
-// ERROR MODAL
-function runModal () {
-  var errorModal = document.getElementById("errorModal");
-  var modalSpan = document.getElementsByClassName("close")[0];
 
-  // Button to Test Modal - remove this later...
-  var modalBtn = document.getElementById("modalBtn");
-  modalBtn.onclick = function() {
-    errorModal.style.display = "block";
-  }
-
-  modalSpan.onclick = function() {
-    errorModal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    if (event.target == errorModal) {
-      errorModal.style.display = "none";
-    }
-  }
-}
-  
-runModal()
 
