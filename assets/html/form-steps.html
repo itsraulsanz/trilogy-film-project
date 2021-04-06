@@ -280,6 +280,77 @@
     <div class="movieSelectorContainer">
       <div class="row movieListContainer" id="movieselector"></div>
     </div>
+    
+    
+    
+    <!-- DISPLAY SELECTED MOVIE -->
+    <div class="selected-movie container">
+      <div class="row valign-wrapper">
+          <div class="col s12">
+              <div class="card hoverable">
+                  <div class="card-image">
+                      <img id="poster" src="" class="responsive">
+                      <span class="card-title creepy" id="film-title"><h2>Film Title</h2></span>
+                  </div>
+                  <div class="card-content">
+                      <p><strong>Director: </strong><span id="director"></span></p>
+                      <p><strong>Age Certificate: </strong><span id="age"></span></p>
+                      <p><strong>Country/Language: </strong><span id="country"></span></p>
+                      <p><strong>Run Time: </strong><span id="runtime"></span></p>
+                      <p><strong>Initially Released: </strong><span id="year-released"></span></p>
+                      <p><strong>Trick or Treat?: </strong><span id="trickortreat"></span></p>
+                      <p><strong>Available on: </strong><span id="watchon"></span></p>
+                      <p><strong>Film synopsis: </strong><span id="synopsis"></span></p>
+                  </div>
+
+                  <div class="card-action">
+                      <a href="#" id="save">Save to My Films</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row valign-wrapper">
+          <a href="movielist.html" class="waves-effect waves-light btn"><i class="fas fa-list right"></i>My Lists</a>
+      </div>
+  </div>
+    
+  <button id="modalBtn">Open Error Modal</button>
+
+  <!-- Error Modal -->
+      <div id="errorModal" class="modal">
+  
+          <!-- Error Modal content -->
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h5>Hammer Time...</h5>
+              <p>No Horror Films Match that search.</p> 
+              <p>Please adjust your criteria and try again.</p> 
+          </div>
+  
+  
+          <script>
+  
+             var errorModal = document.getElementById("errorModal");
+             var modalSpan = document.getElementsByClassName("close")[0];
+  
+              // Button to Test Modal - remove this later...
+              var modalBtn = document.getElementById("modalBtn");
+              modalBtn.onclick = function() {
+                errorModal.style.display = "block";
+              }
+            
+              modalSpan.onclick = function() {
+                errorModal.style.display = "none";
+              }
+            
+              window.onclick = function(event) {
+                if (event.target == errorModal) {
+                  errorModal.style.display = "none";
+                }
+              }
+          </script>
+  
+      </div>
 
     <footer>
       <h5>Trilogy Film Project</h5>
