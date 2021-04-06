@@ -231,8 +231,29 @@ function displaySelectedMovie(data) {
   filmSynopsis.textContent = data.Plot;
   filmSynopsis.style.color = "black";
 
-  
-  
 }
 
 
+
+// LOCAL STORAGE
+
+function saveFilmHistory () {
+  var filmTitle = document.getElementById("film-title");
+  var filmTitleData = filmTitle.value;
+
+  var filmHistoryinput = JSON.parse(window.localStorage.getItem("film-history")) || [];
+  filmHistoryinput.push(filmTitleData);
+  window.localStorage.setItem("film-history", JSON.stringify(filmHistoryinput));
+
+  for (var i = 0; i <filmHistoryinput.length; i++) {
+    var entry = document.createElement("p");
+    entry.textContent = filmHistoryinput[i];
+    entry.setAttribute("id", "film-item");
+    var filmsList = document.getElementById("film-history");
+    filmsList.appendChild(entry);
+    // window.localStorage.clear();
+
+  } 
+}
+
+document.getElementById("save-btn").addEventListener("click", saveFilmHistory)
