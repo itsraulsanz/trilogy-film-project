@@ -1,23 +1,22 @@
-
-
-// Getting the movie criteria
 var typeEl = document.querySelector("#type");
 var subgenreEl = document.querySelector("#subgenre");
 var yearsEl = document.querySelector("#years");
 var languageEl = document.querySelector("#language");
-var movieselectorEl = document.getElementById("movieselector");
-var movieSelectedScreen = document.getElementById("selected-movie")
-movieSelectedScreen.style.display = "none";
+var movieSelectorContainer = document.querySelector(".movieSelectorContainer");
+var movieSelectedScreen = document.querySelector(".selected-movie")
  
 function hideEls () {
 subgenreEl.style.display = "none";
 yearsEl.style.display = "none";
 languageEl.style.display = "none";
-movieselectorEl.style.display = "none";
+movieSelectorContainer.style.display = "none";
+errorModal.style.display = "none";
+movieSelectedScreen.style.display = "none";
 }
 
 hideEls();
  
+// Getting the movie criteria
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
 var urlForm = "https://api.themoviedb.org/3/discover/";
 // var type = "movie"; // or "tv"
@@ -35,8 +34,8 @@ var urlForm = "https://api.themoviedb.org/3/discover/";
 // Religion ID: 11001
  
 // TYPE
-if (document.querySelector('input[name="type"]')) {
- document.querySelectorAll('input[name="type"]').forEach((elem) => {
+if (document.querySelector('option[name="type"]')) {
+ document.querySelectorAll('option[name="type"]').forEach((elem) => {
    elem.addEventListener("click", function (event) {
      var type = event.target.value;
      console.log(type);
@@ -45,14 +44,14 @@ if (document.querySelector('input[name="type"]')) {
      urlForm += API_KEY;
      console.log(urlForm);
      typeEl.style.display = "none";
-     subgenreEl.style.display = "block";
+     subgenreEl.style.display = "flex";
    });
  });
 }
  
 // SUBGENRE
-if (document.querySelector('input[name="subgenre"]')) {
- document.querySelectorAll('input[name="subgenre"]').forEach((elem) => {
+if (document.querySelector('option[name="subgenre"]')) {
+ document.querySelectorAll('option[name="subgenre"]').forEach((elem) => {
    elem.addEventListener("click", function (event) {
      var subgenre = event.target.value;
      console.log(subgenre);
@@ -60,14 +59,14 @@ if (document.querySelector('input[name="subgenre"]')) {
      urlForm += subgenre;
      console.log(urlForm);
      subgenreEl.style.display = "none";
-     yearsEl.style.display = "block";
+     yearsEl.style.display = "flex";
    });
  });
 }
  
 // YEARS
-if (document.querySelector('input[name="years"]')) {
- document.querySelectorAll('input[name="years"]').forEach((elem) => {
+if (document.querySelector('option[name="years"]')) {
+ document.querySelectorAll('option[name="years"]').forEach((elem) => {
    elem.addEventListener("click", function (event) {
      var years = event.target.value;
      console.log(years);
@@ -75,14 +74,14 @@ if (document.querySelector('input[name="years"]')) {
      urlForm += years;
      console.log(urlForm);
      yearsEl.style.display = "none";
-     languageEl.style.display = "block";
+     languageEl.style.display = "flex";
    });
  });
 }
  
 // LANGUAGE
-if (document.querySelector('input[name="language"]')) {
- document.querySelectorAll('input[name="language"]').forEach((elem) => {
+if (document.querySelector('option[name="language"]')) {
+ document.querySelectorAll('option[name="language"]').forEach((elem) => {
    elem.addEventListener("click", function (event) {
      var language = event.target.value;
      console.log(language);
@@ -90,7 +89,7 @@ if (document.querySelector('input[name="language"]')) {
      urlForm += language;
      console.log(urlForm);
      languageEl.style.display = "none";
-     movieselectorEl.style.display = "block";
+     movieSelectorContainer.style.display = "block";
      //console.log(userData)
      getTheMovieDatabase();
    });
@@ -134,32 +133,27 @@ function printItemList(movieData) {
    var itemTitleEl = document.createElement("div");
    itemTitleEl.classList.add("card-title", "itemTitle");
    itemTitleEl.textContent = movieData[i].title;
-   itemCardEl.appendChild(itemTitleEl);
  
-   cardEl.addEventListener("click", function (event) {
+   itemCardImageEl.addEventListener("click", function (event) {
      console.log("clicked");
      getOpenMovieDatabaseAPI(title);
+     getOpenMovieDatabaseAPI();
+
    });
+
    cardEl.appendChild(itemCardImageEl);
+   cardEl.appendChild(itemTitleEl);
    itemCardEl.appendChild(cardEl);
    rowEl.appendChild(itemCardEl);
  }
 }
 
-function displayMovieSelected(){
-
-}
-
 // OPEN MOVIE DATABASE
  
 function getOpenMovieDatabaseAPI(title) {
-  movieselectorEl.style.display = "none";
-  movieSelectedScreen.removeAttribute("style");
-  movieSelectedScreen.classList.remove("hide");
+  movieSelectorContainer.style.display = "none";
+  movieSelectedScreen.style.display = "block";
   console.log(title)
-  // console.log(year)
-  movieselectorEl.style.display = "none";
-  movieSelectedScreen.style.display = "block"
   var API_KEY = "930706b3";
   var requestURL = `http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`;
   
@@ -169,14 +163,10 @@ function getOpenMovieDatabaseAPI(title) {
     })
     .then(function (data) {
       console.log("OMDB", data);
-  
-      
       displaySelectedMovie(data)
       trickorTreat(data);
     });
 }
-  
-getOpenMovieDatabaseAPI();
   
 
 // TRICK OR TREAT FUNCTION

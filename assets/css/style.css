@@ -1,3 +1,7 @@
+.remove-all-styles {
+  all: revert;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: "Creepster", cursive;
 }
@@ -5,6 +9,10 @@ h1, h2, h3, h4, h5 {
 h1 {
   margin: 0;
   padding: 15px 0 15px 0;
+}
+
+h3 {
+  font-size: 1.8rem;
 }
 
 h5 {
@@ -65,7 +73,6 @@ footer {
 
 .movieSelectorItem {
   position: relative;
-  border: white solid 1px;
 }
 
 .movieselector,
@@ -75,18 +82,18 @@ footer {
 }
 
 .row .col {
-  padding: 1rem 1rem !important;
+  padding: 0 1rem !important;
 }
 
 .itemTitle {
   margin-bottom: 10px;
+  line-height: 19px;
+  text-align: center;
+  height: 50px;
 }
 
-.itemSelector:hover {
+.movieSelectorItem:hover {
   cursor: pointer;
-}
-
-.itemSelector:hover {
   filter: opacity(0.5);
 }
 
@@ -129,6 +136,7 @@ footer {
 
 .card {
   margin: auto;
+  background-color: black;
 }
 
 .card.large {
@@ -139,8 +147,17 @@ footer {
   left: 50%;
   margin: 0 auto;
 }
-.card .card-content .card-title {
+.card .card-title {
   text-align: center;
+  font-size: 0.9rem;
+  padding: 6px;
+  color: white;
+  height: 80px;
+}
+
+.card-image:first-child img {
+  width: 100%;
+  height: 250px;
 }
 
 .divider {
@@ -160,12 +177,31 @@ footer {
 
 .form-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 50vh;
 }
 
+.formTitle {
+  color: #ef6c00;
+  margin-bottom: 20px;
+}
+
+.select select[multiple] {
+  width: 30%;
+  text-align: center;
+}
+
+.select select[multiple] option:hover {
+  background-color: #ef6c00;
+  color: white;
+}
+
+.delimiter {
+  border-bottom: black solid 1px;
+}
 
 .creepy {
     font-family: "Creepster", cursive;
