@@ -171,6 +171,10 @@ footer {
   display: block;
 }
 
+#font-black {
+  color:black;
+}
+
 .form-wrapper {
   display: flex;
   flex-direction: column;
@@ -251,6 +255,18 @@ footer {
     border-color: black;
     margin-bottom: 5px;
     border-radius: 25px;
+} 
+
+#spooky {
+  background-color:rgb(129, 129, 218);
+  color: black;
+  font-family: "Creepster", cursive;
+  padding: 4px;
+  border-style: groove;
+  border-width: 2px;
+  border-color: black;
+  margin-bottom: 5px;
+  border-radius: 25px;
 } 
 
 .card-content {

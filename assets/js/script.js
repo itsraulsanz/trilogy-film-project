@@ -5,12 +5,9 @@ var typeEl = document.querySelector("#type");
 var subgenreEl = document.querySelector("#subgenre");
 var yearsEl = document.querySelector("#years");
 var languageEl = document.querySelector("#language");
-var movieselectorEl = document.getElementById("movieselector");
 var movieSelectorContainer = document.querySelector(".movieSelectorContainer");
-var movieSelectedScreen = document.querySelector('.selected-movie')
-var errorModal = document.querySelector('#errorModal')
-
-
+var movieSelectedScreen = document.getElementById("selected-movie")
+movieSelectedScreen.style.display = "none";
  
 function hideEls () {
 movieSelectedScreen.style.display = "none"
@@ -133,16 +130,16 @@ function printItemList(movieData) {
    itemCardImageEl.appendChild(itemImageEl);
 
    console.log(movieData[i])
-   console.log(movieData[i].release_date.slice(0, 4))
+  //  console.log(movieData[i].release_date.slice(0, 4))
    const title = movieData[i].title;
-   const year = movieData[i].release_date.slice(0, 4); 
+  //  const year = movieData[i].release_date.slice(0, 4); 
    var itemTitleEl = document.createElement("div");
    itemTitleEl.classList.add("card-title", "itemTitle");
    itemTitleEl.textContent = movieData[i].title;
  
    itemCardImageEl.addEventListener("click", function (event) {
      console.log("clicked");
-     getOpenMovieDatabaseAPI(title, year);
+     getOpenMovieDatabaseAPI(title);
    });
 
    cardEl.appendChild(itemCardImageEl);
@@ -158,17 +155,16 @@ function displayMovieSelected(){
 
 // OPEN MOVIE DATABASE
  
-function getOpenMovieDatabaseAPI(title, year) {
+function getOpenMovieDatabaseAPI(title) {
   movieselectorEl.style.display = "none";
   movieSelectedScreen.removeAttribute("style");
+  movieSelectedScreen.classList.remove("hide");
   console.log(title)
-  console.log(year)
-  // movieselectorEl.style.display = "none";
-  // movieSelectedScreen.style.display = "block"
+  // console.log(year)
+  movieselectorEl.style.display = "none";
+  movieSelectedScreen.style.display = "block"
   var API_KEY = "930706b3";
-  // var title = "the ring";
-  // var year = "2002";
-  var requestURL = `http://www.omdbapi.com/?t=${title}&y=${year}&apikey=${API_KEY}`;
+  var requestURL = `http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`;
   
   fetch(requestURL)
     .then(function (response) {
@@ -177,14 +173,15 @@ function getOpenMovieDatabaseAPI(title, year) {
     .then(function (data) {
       console.log("OMDB", data);
   
-      trickorTreat(data);
+      
       displaySelectedMovie(data)
+      trickorTreat(data);
     });
 }
   
-// getOpenMovieDatabaseAPI();
+getOpenMovieDatabaseAPI();
   
-  
+
 // TRICK OR TREAT FUNCTION
 function trickorTreat (data) {
   console.log(data)
@@ -202,14 +199,17 @@ function trickorTreat (data) {
     trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
     trickOrTreatInput.setAttribute("id", "caution");
   }
+  if (IMDBscore && metacriticScore && rottenTomatoesScore === 0);
+  trickOrTreatInput.textContent =  "SPOOKY - NO RATINGS!";
+  trickOrTreatInput.setAttribute("id", "spooky");
 }
-  
+
+
 
 // DISPLAY SELECTED MOVIE
   
 function displaySelectedMovie(data) {
-  console.log(data, "displayselectedmovie")
-  
+  console.log(data, "displayselectedmovie")  
   var filmTitle = document.getElementById("film-title");
   filmTitle.textContent = data.Title;
   var posterImage = document.getElementById("poster");
@@ -230,12 +230,33 @@ function displaySelectedMovie(data) {
   var yearReleased = document.getElementById("year-released");
   yearReleased.textContent = data.Released;
   yearReleased.style.color = "orange";
-  var availableOn = document.getElementById("watchon");
-  availableOn.textContent;
   var filmSynopsis = document.getElementById("synopsis");
   filmSynopsis.textContent = data.Plot;
   filmSynopsis.style.color = "black";
-  
+
 }
 
 
+
+// LOCAL STORAGE
+
+function saveFilmHistory () {
+  var filmTitle = document.getElementById("film-title");
+  var filmTitleData = filmTitle.value;
+
+  var filmHistoryinput = JSON.parse(window.localStorage.getItem("film-history")) || [];
+  filmHistoryinput.push(filmTitleData);
+  window.localStorage.setItem("film-history", JSON.stringify(filmHistoryinput));
+
+  for (var i = 0; i <filmHistoryinput.length; i++) {
+    var entry = document.createElement("p");
+    entry.textContent = filmHistoryinput[i];
+    entry.setAttribute("id", "film-item");
+    var filmsList = document.getElementById("film-history");
+    filmsList.appendChild(entry);
+    // window.localStorage.clear();
+
+  } 
+}
+
+document.getElementById("save-btn").addEventListener("click", saveFilmHistory)
