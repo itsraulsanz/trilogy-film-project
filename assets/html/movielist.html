@@ -1,65 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-   />
-   <link rel="stylesheet" href="../css/style.css" />
-   <link rel="preconnect" href="https://fonts.gstatic.com" />
-   <link
-     href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
-     rel="stylesheet"
-   />
-   <title>HAMMERED HORROR</title>
- </head>
- <body>
-   <header>
-     <h1>HAMMERED HORROR</h1>
-   </header>
+<html class="remove-all-styles" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+    <title>HAMMERED HORROR</title>
+  </head>
+  <body class="dark-background">
+    <header>
+      <h1>HAMMERED HORROR</h1>
+    </header>
 
-   <div id="film-history"></div>
-  
-   <div class="row movieListContainer">
-     <div class="col s6 m4 l2">
-       <div class="card">
-         <div class="card-image">
-           <img
-             src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Theringpostere.jpg/220px-Theringpostere.jpg"
-           />
-           <span class="card-title">Movie Title</span>
-         </div>
-       </div>
-     </div>
- 
-     <div class="col s6 m4 l2">
-       <div class="card">
-         <div class="card-image">
-           <img
-             src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Theringpostere.jpg/220px-Theringpostere.jpg"
-           />
-           <span class="card-title">Movie Title</span>
-         </div>
-       </div>
-     </div>
- 
-     <div class="col s6 m4 l2">
-       <div class="card">
-         <div class="card-image">
-           <img
-             src="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Theringpostere.jpg/220px-Theringpostere.jpg"
-           />
-           <span class="card-title">Movie Title</span>
-         </div>
-       </div>
-     </div>
- 
-   <footer>
-     <h5>Trilogy Film Project</h5>
-   </footer>
- 
-   <script src="../js/script.js"></script>
- </body>
+<!-- Movie List -->
+    <div class="movieSelectorContainer">
+      <div class="row movieListContainer" id="movieselector"></div>
+    </div>
+
+
+    </div>
+
+    <footer>
+      <h5>Trilogy Film Project</h5>
+    </footer>
+
+    <script src="../js/movielist.js"></script>
+  </body>
 </html>
