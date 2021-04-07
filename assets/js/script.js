@@ -1,25 +1,22 @@
-
-
-// Getting the movie criteria
 var typeEl = document.querySelector("#type");
 var subgenreEl = document.querySelector("#subgenre");
 var yearsEl = document.querySelector("#years");
 var languageEl = document.querySelector("#language");
 var movieSelectorContainer = document.querySelector(".movieSelectorContainer");
-var movieSelectedScreen = document.getElementById("selected-movie")
-movieSelectedScreen.style.display = "none";
+var movieSelectedScreen = document.querySelector(".selected-movie")
  
 function hideEls () {
-movieSelectedScreen.style.display = "none"
 subgenreEl.style.display = "none";
 yearsEl.style.display = "none";
 languageEl.style.display = "none";
 movieSelectorContainer.style.display = "none";
 errorModal.style.display = "none";
+movieSelectedScreen.style.display = "none";
 }
 
 hideEls();
  
+// Getting the movie criteria
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
 var urlForm = "https://api.themoviedb.org/3/discover/";
 // var type = "movie"; // or "tv"
@@ -140,6 +137,8 @@ function printItemList(movieData) {
    itemCardImageEl.addEventListener("click", function (event) {
      console.log("clicked");
      getOpenMovieDatabaseAPI(title);
+     getOpenMovieDatabaseAPI();
+
    });
 
    cardEl.appendChild(itemCardImageEl);
@@ -149,20 +148,12 @@ function printItemList(movieData) {
  }
 }
 
-function displayMovieSelected(){
-
-}
-
 // OPEN MOVIE DATABASE
  
 function getOpenMovieDatabaseAPI(title) {
-  movieselectorEl.style.display = "none";
-  movieSelectedScreen.removeAttribute("style");
-  movieSelectedScreen.classList.remove("hide");
+  movieSelectorContainer.style.display = "none";
+  movieSelectedScreen.style.display = "block";
   console.log(title)
-  // console.log(year)
-  movieselectorEl.style.display = "none";
-  movieSelectedScreen.style.display = "block"
   var API_KEY = "930706b3";
   var requestURL = `http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`;
   
@@ -172,14 +163,10 @@ function getOpenMovieDatabaseAPI(title) {
     })
     .then(function (data) {
       console.log("OMDB", data);
-  
-      
       displaySelectedMovie(data)
       trickorTreat(data);
     });
 }
-  
-getOpenMovieDatabaseAPI();
   
 
 // TRICK OR TREAT FUNCTION
