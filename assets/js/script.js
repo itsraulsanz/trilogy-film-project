@@ -19,19 +19,6 @@ hideEls();
 // Getting the movie criteria
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
 var urlForm = "https://api.themoviedb.org/3/discover/";
-// var type = "movie"; // or "tv"
-// var subgenre = "12377"; // looking for keywords for each subGenre
-// var year = "2020";
-// var language = "ko"; // make a function to convert the language to ISO_639-1 code
-// Psychological ID: 157314
-// Post Apocalyptic ID: 270348
-// Slasher: 12339   // + Serial Killer ID: 10714
-// Supernatural ID: 6152
-// Paranormal ID: 9853
-// Zombies ID: 12377
-// Monsters ID: 1299
-// Gore ID: 10292
-// Religion ID: 11001
 
 // TYPE
 if (document.querySelector('option[name="type"]')) {
@@ -198,7 +185,7 @@ function trickorTreat(data) {
 // DISPLAY SELECTED MOVIE
 
 function displaySelectedMovie(data) {
-  console.log(data, "displayselectedmovie");
+  //console.log(data, "displayselectedmovie");
   var filmTitle = document.getElementById("film-title");
   filmTitle.textContent = data.Title;
   var posterImage = document.getElementById("poster");
@@ -221,7 +208,7 @@ function displaySelectedMovie(data) {
   yearReleased.style.color = "orange";
   var filmSynopsis = document.getElementById("synopsis");
   filmSynopsis.textContent = data.Plot;
-  filmSynopsis.style.color = "black";
+  filmSynopsis.classList.add("filmSynopsis");
 }
 
 // LOCAL STORAGE
