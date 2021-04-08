@@ -1,3 +1,10 @@
+:root {
+  --dark: black;
+  --light: white;
+  --darkorange: #ef6c00;
+  --lightorange: #ffa726;
+}
+
 .remove-all-styles {
   all: revert;
 }
@@ -24,14 +31,14 @@ h5 {
 }
 
 a {
-  color: white;
+  color: var(--light);
 }
 
 header {
   height: 20%;
-  background-color: black;
+  background-color: var(--dark);
   text-align: center;
-  color: white;
+  color: var(--light);;
   font-weight: bold;
   font-size: 50px;
   margin-bottom: 10px;
@@ -41,22 +48,22 @@ main {
   height: 75%;
 }
 
-.tab a.active {
-  color: #fff;
-  border-bottom: #ef6c00 solid 2px;
-  background-color: black;
-  font-size: 1.5rem;
-}
-
 footer {
   padding: 10px;
-  background-color: black;
+  background-color: var(--dark);
   text-align: center;
-  color: white;
+  color: var(--light);;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+.tab a.active {
+  color: #fff;
+  border-bottom: var(--darkorange) solid 2px;
+  background-color: var(--dark);
+  font-size: 1.5rem;
 }
 
 .selected-movie {
@@ -73,7 +80,7 @@ footer {
 
 .movieSelectorContainer {
   margin: 40px;
-  background-color: black;
+  background-color: var(--dark);
 }
 
 .movieSelectorItem {
@@ -82,8 +89,8 @@ footer {
 
 .movieselector,
 .dark-background {
-  background-color: black;
-  color: white;
+  background-color: var(--dark);
+  color: var(--light);;
 }
 
 .row .col {
@@ -111,7 +118,7 @@ footer {
 }
 
 .btn {
-  background-color: #ef6c00 !important;
+  background-color: var(--darkorange) !important;
   width: 20% !important;
   min-height: 50px !important;
   margin-bottom: 10px;
@@ -121,11 +128,11 @@ footer {
 }
 
 .btn:hover {
-  background-color: #ffa726 !important;
+  background-color: var(--lightorange) !important;
 }
 
 .btn-header {
-  background-color: #ef6c00 !important;
+  background-color: var(--darkorange) !important;
   position: absolute;
   top: 30px;
   right: 15px;
@@ -133,8 +140,8 @@ footer {
 }
 
 .btn-header:hover {
-  background-color: #ffa726 !important;
-  color: black !important;
+  background-color: var(--lightorange) !important;
+  color: var(--dark) !important;
 }
 
 .start h1 {
@@ -154,7 +161,7 @@ footer {
 
 .card {
   margin: auto;
-  background-color: black;
+  background-color: var(--dark);
   height: 25rem;
 }
 
@@ -170,7 +177,7 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   padding: 6px;
-  color: white;
+  color: var(--light);;
   height: 80px;
 }
 
@@ -191,19 +198,19 @@ footer {
 }
 
 .btn-save {
-  background-color: #ef6c00 !important;
+  background-color: var(--darkorange) !important;
   text-transform: none !important;
   margin-top: 25px;
   margin-right: 10px;
 }
 
 .btn-save:hover {
-  background-color: #ffa726 !important;
-  color: black !important;
+  background-color: var(--lightorange) !important;
+  color: var(--dark) !important;
 }
 
 strong {
- color: white;
+ color: var(--light);;
 }
 
 .divider {
@@ -218,7 +225,7 @@ strong {
 }
 
 #font-black {
-  color: black;
+  color: var(--dark);
 }
 
 .form-wrapper {
@@ -231,7 +238,7 @@ strong {
 }
 
 .formTitle {
-  color: #ef6c00;
+  color: var(--darkorange);
   margin-bottom: 20px;
 }
 
@@ -241,12 +248,12 @@ strong {
 }
 
 .select select[multiple] option:hover {
-  background-color: #ef6c00;
-  color: white;
+  background-color: var(--darkorange);
+  color: var(--light);;
 }
 
 .delimiter {
-  border-bottom: black solid 1px;
+  border-bottom: var(--dark) solid 1px;
 }
 
 .creepy {
@@ -277,53 +284,53 @@ strong {
   width: auto;
   height: 60vh;
   object-fit: contain;
-  background-color: black;
+  background-color: var(--dark);
 }
 
 .caution {
   background-color: yellow;
-  color: black;
+  color: var(--dark);
   font-family: "Creepster", cursive;
   padding: 4px;
   border-style: groove;
   border-width: 2px;
-  border-color: black;
+  border-color: var(--dark);
   margin-bottom: 5px;
   border-radius: 25px;
 }
 
 .treat {
   background-color: greenyellow;
-  color: black;
+  color: var(--dark);
   font-family: "Creepster", cursive;
   padding: 4px;
   border-style: groove;
   border-width: 2px;
-  border-color: black;
+  border-color: var(--dark);
   margin-bottom: 5px;
   border-radius: 25px;
 }
 
 .trick {
   background-color: red;
-  color: black;
+  color: var(--dark);
   font-family: "Creepster", cursive;
   padding: 4px;
   border-style: groove;
   border-width: 2px;
-  border-color: black;
+  border-color: var(--dark);
   margin-bottom: 5px;
   border-radius: 25px;
 }
 
 .spooky {
   background-color: rgb(129, 129, 218);
-  color: black;
+  color: var(--dark);
   font-family: "Creepster", cursive;
   padding: 4px;
   border-style: groove;
   border-width: 2px;
-  border-color: black;
+  border-color: var(--dark);
   margin-bottom: 5px;
   border-radius: 25px;
 }
@@ -349,7 +356,7 @@ strong {
   background-color: orange;
   margin: auto;
   padding: 15px;
-  border: 5px black solid;
+  border: 5px var(--dark) solid;
   width: 80%;
 }
 
@@ -362,7 +369,7 @@ strong {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--dark);
   cursor: pointer;
   text-decoration: none;
 }
