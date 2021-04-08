@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+    src="https://kit.fontawesome.com/a9d6910f06.js"
+    crossorigin="anonymous"
+  ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -21,7 +25,7 @@
   </head>
   <body class="dark-background">
     <header>
-      <h1>HAMMERED HORROR</h1>
+      <h1><a href="../../index.html">HAMMERED HORROR</a></h1>
     </header>
 
 <!-- Movie List -->
@@ -29,7 +33,36 @@
       <div class="row movieListContainer" id="movieselector"></div>
     </div>
 
+<!-- Display Selected Movie -->
+    <div class="selected-movie row">
 
+      <div class="col s12 m6 l4 card-image hoverable">
+          <img id="poster" src="" class="responsive hoverable" />
+        </div>
+
+          <div class="col s12 m6 l8 movie-info" id="font-black">
+            <span class="card-title selected-movie-title" id="film-title"></span>
+            <p><strong>Age Certificate: </strong><span id="age"></span></p>
+            <p>
+              <strong>Country/Language: </strong><span id="country"></span>
+            </p>
+            <p>
+              <strong>Initially Released: </strong
+              ><span id="year-released"></span>
+            </p>
+            <p><strong>Director: </strong><span id="director"></span></p>
+            <p><strong>Run Time: </strong><span id="runtime"></span></p>
+            <p>
+              <strong>Trick or Treat?: </strong
+              ><span id="trickortreat"></span>
+            </p>
+            <!-- <p><strong>Available on: </strong><span id="watchon"></span></p> -->
+            <p class="synopsis-text"><strong>Film synopsis: </strong><span id="synopsis"></span>
+            </p>
+            <a href="./movielist.html" id="back-btn" class="waves-effect waves-light btn-small btn-save"><i class="fas fa-backward right"></i>Go to the List</a>
+            <a href="#" id="save-btn" class="waves-effect waves-light btn-small btn-save"><i class="far fa-surprise right"></i>Delete From My List</a>
+          </div>
+</div>
     </div>
 
     <footer>

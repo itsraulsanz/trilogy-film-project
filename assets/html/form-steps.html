@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a9d6910f06.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -21,7 +25,10 @@
   </head>
   <body class="dark-background">
     <header>
-      <h1>HAMMERED HORROR</h1>
+      <h1><a href="../../index.html">HAMMERED HORROR</a></h1>
+      <a href="movielist.html" class="waves-effect waves-light btn-small btn-header"
+        ><i class="fas fa-bars right"></i>My Lists</a
+      >
     </header>
 
     <!-- Type -->
@@ -174,73 +181,34 @@
     </div>
 
     <!-- Display Selected Movie -->
-    <div class="selected-movie">
-    <div class="container">
-          <div class="row valign-wrapper">
-            <div class="col s12">
-              <div class="card">
-                    <div class="card-image hoverable">
-                        <img id="poster" src="" class="responsive hoverable">
-                        <span class="card-title creepy" id="film-title"><h2>Film Title</h2></span>
-                    </div>
-                    <div class="card-content" id="font-black">
-                        <p><strong>Director: </strong><span id="director"></span></p>
-                        <p><strong>Age Certificate: </strong><span id="age"></span></p>
-                        <p><strong>Country/Language: </strong><span id="country"></span></p>
-                        <p><strong>Run Time: </strong><span id="runtime"></span></p>
-                        <p><strong>Initially Released: </strong><span id="year-released"></span></p>
-                        <p><strong>Trick or Treat?: </strong><span id="trickortreat"></span></p>
-                        <!-- <p><strong>Available on: </strong><span id="watchon"></span></p> -->
-                        <p><strong>Film synopsis: </strong><span id="synopsis"></span></p>
-                    </div>
+    <div class="selected-movie row">
 
-                    <div class="card-action">
-                        <a href="#" id="save-btn">Save to My Films</a>
-                    </div>
-                </div>
+          <div class="col s12 m6 l4 card-image hoverable">
+              <img id="poster" src="" class="responsive hoverable" />
             </div>
-          </div>
-        </div>
-        </div>
-      <div class="row valign-wrapper">
-         <a href="movielist.html" class="waves-effect waves-light btn row valign-wrapper"><i class="fas fa-list right"></i>My Lists</a>
-      </div>
-  </div>
-    
-  <button id="modalBtn" class="row valign-wrapper">Open Error Modal</button>
 
-    <button id="modalBtn">Open Error Modal</button>
-
-    <!-- Error Modal -->
-    <div id="errorModal" class="modal">
-      <!-- Error Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h5>Hammer Time...</h5>
-        <p>No Horror Films Match that search.</p>
-        <p>Please adjust your criteria and try again.</p>
-      </div>
-
-      <script>
-        var errorModal = document.getElementById("errorModal");
-        var modalSpan = document.getElementsByClassName("close")[0];
-
-        // Button to Test Modal - remove this later...
-        var modalBtn = document.getElementById("modalBtn");
-        modalBtn.onclick = function () {
-          errorModal.style.display = "block";
-        };
-
-        modalSpan.onclick = function () {
-          errorModal.style.display = "none";
-        };
-
-        window.onclick = function (event) {
-          if (event.target == errorModal) {
-            errorModal.style.display = "none";
-          }
-        };
-      </script>
+              <div class="col s12 m6 l8 movie-info" id="font-black">
+                <span class="card-title selected-movie-title" id="film-title"></span>
+                <p><strong>Age Certificate: </strong><span id="age"></span></p>
+                <p>
+                  <strong>Country/Language: </strong><span id="country"></span>
+                </p>
+                <p>
+                  <strong>Initially Released: </strong
+                  ><span id="year-released"></span>
+                </p>
+                <p><strong>Director: </strong><span id="director"></span></p>
+                <p><strong>Run Time: </strong><span id="runtime"></span></p>
+                <p>
+                  <strong>Trick or Treat?: </strong
+                  ><span id="trickortreat"></span>
+                </p>
+                <!-- <p><strong>Available on: </strong><span id="watchon"></span></p> -->
+                <p class="synopsis-text"><strong>Film synopsis: </strong><span id="synopsis"></span>
+                </p>
+                <a href="#" id="back-btn" class="waves-effect waves-light btn-small btn-save"><i class="fas fa-backward right"></i>Go to the Results</a>
+                <a href="#" id="save-btn" class="waves-effect waves-light btn-small btn-save"><i class="far fa-surprise right"></i>Save to My List</a>
+              </div>
     </div>
 
     <footer>
