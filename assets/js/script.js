@@ -107,8 +107,13 @@ function getTheMovieDatabase() {
 }
 
 function printItemList(movieData) {
-  //console.log(movieData);
+
+  // ERROR MODAL - Displays if no results match search
   var rowEl = document.querySelector("#movieselector");
+  if (movieData.length == 0) {
+    var errorModal = document.getElementById("errorModal");
+    errorModal.style.display = "block";
+  }
 
   for (let i = 0; i < movieData.length; i++) {
     var itemCardEl = document.createElement("div");
@@ -161,41 +166,53 @@ function getOpenMovieDatabaseAPI(title) {
     .then(function (data) {
       console.log("OMDB", data);
       displaySelectedMovie(data);
-      trickorTreat(data);
+      trickorTreat(data.Ratings);
     });
 }
 
 // TRICK OR TREAT FUNCTION
-function trickorTreat(data) {
-  console.log(data);
-  var IMDBscore = data.Ratings[0].value;
-  var rottenTomatoesScore = data.Ratings[1].value;
-  var metacriticScore = data.Ratings[2].value;
-  var trickOrTreatInput = document.getElementById("trickortreat");
-  if (
-    IMDBscore > parseInt("5.0/10", 5 / 10) &&
-    rottenTomatoesScore > parseInt("50%", 50 / 100) &&
-    metacriticScore > parseInt("50/100", 50 / 100)
-  ) {
-    trickOrTreatInput.textContent = " TREAT!";
-    trickOrTreatInput.setAttribute("id", "treat");
-  } else if (
-    IMDBscore < parseInt("5.0/10", 5 / 10) &&
-    rottenTomatoesScore < parseInt("50%", 50 / 100) &&
-    metacriticScore < parseInt("50/100", 50 / 100)
-  ) {
-    trickOrTreatInput.textContent = " TRICK!";
-    trickOrTreatInput.setAttribute("id", "trick");
-  } else {
-    trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
-    trickOrTreatInput.setAttribute("id", "caution");
-  }
-  if (IMDBscore && metacriticScore && rottenTomatoesScore === 0);
-  trickOrTreatInput.textContent = "SPOOKY - NO RATINGS!";
-  trickOrTreatInput.setAttribute("id", "spooky");
-}
+  
+ function trickorTreat(data) {
+   var trickOrTreatInput = document.getElementById("trickortreat");
+   var IMDBscore = data[0] && data[0].Value;
+   var rottenTomatoesScore = data[1] && data[1].Value;
+   var metacriticScore = data[2] && data[2].Value;
 
-// DISPLAY SELECTED MOVIE
+   // normalises all values out of 100
+   // parseFloat takes decimal score and ignores suffix string
+  
+   var imdbParsed = parseFloat(IMDBscore) * 10;
+   var rottenParsed = parseInt(rottenTomatoesScore);
+   var metaParsed = parseInt(metacriticScore);
+    console.log("imdb parsed " + imdbParsed);
+    console.log("rotten parsed " + rottenParsed);
+    console.log("meta parsed " + metaParsed);
+    
+  // checks error - if not enough score data
+  if (Number.isNaN(imdbParsed) || Number.isNaN(rottenParsed) || Number.isNaN(metaParsed)) {
+    trickOrTreatInput.textContent = " Not Enough Data";
+    trickOrTreatInput.setAttribute("class", "spooky");
+   
+  } else if (
+      imdbParsed > 50 &&
+      rottenParsed > 50 &&
+      metaParsed > 50
+   ) {
+     trickOrTreatInput.textContent = "TREAT!";
+     trickOrTreatInput.setAttribute("class", "treat");
+   } else if (
+    imdbParsed < 50 &&
+    rottenParsed < 50 &&
+    metaParsed < 50
+   ) {
+     trickOrTreatInput.textContent = "TRICK!";
+     trickOrTreatInput.setAttribute("class", "trick");
+   } else {
+     trickOrTreatInput.textContent = " JURY'S OUT - APPROACH WITH CAUTION!";
+     trickOrTreatInput.setAttribute("class", "caution");
+   }
+}
+  
 
 function displaySelectedMovie(data) {
   console.log(data, "displayselectedmovie");

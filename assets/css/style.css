@@ -221,7 +221,7 @@ footer {
     background-color: black;
   }
 
-  #caution {
+  .caution {
       background-color: yellow;
       color: black;
       font-family: "Creepster", cursive;
@@ -233,7 +233,7 @@ footer {
       border-radius: 25px;
   } 
 
-  #treat {
+  .treat {
     background-color: greenyellow;
     color: black;
     font-family: "Creepster", cursive;
@@ -245,7 +245,7 @@ footer {
     border-radius: 25px;
 } 
 
-#trick {
+.trick {
     background-color: red;
     color: black;
     font-family: "Creepster", cursive;
@@ -257,7 +257,7 @@ footer {
     border-radius: 25px;
 } 
 
-#spooky {
+.spooky {
   background-color:rgb(129, 129, 218);
   color: black;
   font-family: "Creepster", cursive;
