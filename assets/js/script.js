@@ -5,16 +5,11 @@ var languageEl = document.querySelector("#language");
 var movieSelectorContainer = document.querySelector(".movieSelectorContainer");
 var movieSelectedScreen = document.querySelector(".selected-movie");
 
-function hideEls() {
-  subgenreEl.style.display = "none";
-  yearsEl.style.display = "none";
-  languageEl.style.display = "none";
-  movieSelectorContainer.style.display = "none";
-  errorModal.style.display = "none";
-  movieSelectedScreen.style.display = "none";
-}
-
-hideEls();
+subgenreEl.style.display = "none";
+yearsEl.style.display = "none";
+languageEl.style.display = "none";
+movieSelectorContainer.style.display = "none";
+movieSelectedScreen.style.display = "none";
 
 // Getting the movie criteria
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
@@ -90,11 +85,12 @@ function getTheMovieDatabase() {
     })
     .then(function (data) {
       printItemList(data.results);
+      //displaySelectedMovie(data.results);
     });
 }
 
 function printItemList(movieData) {
-  //console.log(movieData);
+  console.log(movieData);
   var rowEl = document.querySelector("#movieselector");
 
   for (let i = 0; i < movieData.length; i++) {
@@ -112,9 +108,9 @@ function printItemList(movieData) {
     itemCardImageEl.appendChild(itemImageEl);
 
     //console.log(movieData[i]);
-    //  console.log(movieData[i].release_date.slice(0, 4))
+    //console.log(movieData[i].release_date.slice(0, 4))
     const title = movieData[i].title;
-    //  const year = movieData[i].release_date.slice(0, 4);
+    //const year = movieData[i].release_date.slice(0, 4);
     var itemTitleEl = document.createElement("div");
     itemTitleEl.classList.add("card-title", "itemTitle");
     itemTitleEl.textContent = movieData[i].title;
@@ -123,6 +119,8 @@ function printItemList(movieData) {
       //console.log("clicked");
       getOpenMovieDatabaseAPI(title);
       getOpenMovieDatabaseAPI();
+      getOpenMovieDatabaseAPI(movieData[i]);
+      displaySelectedMovie(movieData[i]);
     });
 
     cardEl.appendChild(itemCardImageEl);
@@ -146,13 +144,59 @@ function getOpenMovieDatabaseAPI(title) {
       return response.json();
     })
     .then(function (data) {
-      console.log("OMDB", data);
-      displaySelectedMovie(data);
+      //console.log("OMDB", data);
+      displayExtraSelectedMovie(data);
       trickorTreat(data);
     });
 }
 
-// TRICK OR TREAT FUNCTION
+function displaySelectedMovie(movieData) {
+  //console.log(movieData);
+  movieSelectorContainer.style.display = "none";
+  movieSelectedScreen.style.display = "block";
+
+  var posterUrl = "https://image.tmdb.org/t/p/w500" + movieData.poster_path;
+
+  var filmTitle = document.getElementById("film-title");
+  filmTitle.textContent = movieData.original_title;
+  var posterImage = document.getElementById("poster");
+  posterImage.setAttribute("src", posterUrl);
+  var ageCertificate = document.getElementById("age");
+  ageCertificate.textContent = movieData.adult;
+  ageCertificate.style.color = "orange";
+  var countryLanguage = document.getElementById("country");
+  countryLanguage.textContent = movieData.original_language;
+  countryLanguage.style.color = "orange";
+  var yearReleased = document.getElementById("year-released");
+  yearReleased.textContent = movieData.release_date;
+  yearReleased.style.color = "orange";
+  var filmSynopsis = document.getElementById("synopsis");
+  filmSynopsis.textContent = movieData.overview;
+  filmSynopsis.classList.add("filmSynopsis");
+  document.getElementById("back-btn").addEventListener("click", function goBack() {
+    window.history.back();
+    });
+  document
+    .getElementById("save-btn")
+    .addEventListener("click", saveFilmHistory);
+}
+
+function displayExtraSelectedMovie(data) {
+  console.log(data);
+  console.log(data.Director);
+
+  var directorName = document.getElementById("director");
+  directorName.textContent = data.Director;
+  directorName.style.color = "orange";
+  var runTime = document.getElementById("runtime");
+  runTime.textContent = data.Runtime;
+  runTime.style.color = "orange";
+  var ageCertificate = document.getElementById("age");
+  ageCertificate.textContent = data.Rated;
+  ageCertificate.style.color = "orange";
+}
+
+//TRICK OR TREAT FUNCTION
 function trickorTreat(data) {
   console.log(data);
   var IMDBscore = data.Ratings[0].value;
@@ -184,32 +228,32 @@ function trickorTreat(data) {
 
 // DISPLAY SELECTED MOVIE
 
-function displaySelectedMovie(data) {
-  //console.log(data, "displayselectedmovie");
-  var filmTitle = document.getElementById("film-title");
-  filmTitle.textContent = data.Title;
-  var posterImage = document.getElementById("poster");
-  var posterURL = data.Poster;
-  posterImage.setAttribute("src", posterURL);
-  var directorName = document.getElementById("director");
-  directorName.textContent = data.Director;
-  directorName.style.color = "orange";
-  var ageCertificate = document.getElementById("age");
-  ageCertificate.textContent = data.Rated;
-  ageCertificate.style.color = "orange";
-  var countryLanguage = document.getElementById("country");
-  countryLanguage.textContent = data.Country + " / " + data.Language;
-  countryLanguage.style.color = "orange";
-  var runTime = document.getElementById("runtime");
-  runTime.textContent = data.Runtime;
-  runTime.style.color = "orange";
-  var yearReleased = document.getElementById("year-released");
-  yearReleased.textContent = data.Released;
-  yearReleased.style.color = "orange";
-  var filmSynopsis = document.getElementById("synopsis");
-  filmSynopsis.textContent = data.Plot;
-  filmSynopsis.classList.add("filmSynopsis");
-}
+// function displaySelectedMovie(data) {
+//   //console.log(data, "displayselectedmovie");
+//   var filmTitle = document.getElementById("film-title");
+//   filmTitle.textContent = data.Title;
+//   var posterImage = document.getElementById("poster");
+//   var posterURL = data.Poster;
+//   posterImage.setAttribute("src", posterURL);
+//   var directorName = document.getElementById("director");
+//   directorName.textContent = data.Director;
+//   directorName.style.color = "orange";
+//   var ageCertificate = document.getElementById("age");
+//   ageCertificate.textContent = data.Rated;
+//   ageCertificate.style.color = "orange";
+//   var countryLanguage = document.getElementById("country");
+//   countryLanguage.textContent = data.Country + " / " + data.Language;
+//   countryLanguage.style.color = "orange";
+//   var runTime = document.getElementById("runtime");
+//   runTime.textContent = data.Runtime;
+//   runTime.style.color = "orange";
+//   var yearReleased = document.getElementById("year-released");
+//   yearReleased.textContent = data.Released;
+//   yearReleased.style.color = "orange";
+//   var filmSynopsis = document.getElementById("synopsis");
+//   filmSynopsis.textContent = data.Plot;
+//   filmSynopsis.classList.add("filmSynopsis");
+// }
 
 // LOCAL STORAGE
 
@@ -225,7 +269,5 @@ function saveFilmHistory() {
     JSON.parse(window.localStorage.getItem("film-history")) || [];
   filmHistoryinput.push(filmTitleData);
   window.localStorage.setItem("film-history", JSON.stringify(filmHistoryinput));
-  console.log(filmTitleData)
+  console.log(filmTitleData);
 }
-
-document.getElementById("save-btn").addEventListener("click", saveFilmHistory);
