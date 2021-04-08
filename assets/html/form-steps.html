@@ -26,7 +26,7 @@
   <body class="dark-background">
     <header>
       <h1><a href="../../index.html">HAMMERED HORROR</a></h1>
-      <a href="movielist.html" class="waves-effect waves-light btn-small btn-header"
+      <a href="./moviedetails.html" class="waves-effect waves-light btn-small btn-header"
         ><i class="fas fa-bars right"></i>My Lists</a
       >
     </header>
@@ -209,8 +209,40 @@
                 <a href="#" id="back-btn" class="waves-effect waves-light btn-small btn-save"><i class="fas fa-backward right"></i>Pick a new Movie</a>
                 <a href="#" id="save-btn" class="waves-effect waves-light btn-small btn-save"><i class="far fa-surprise right"></i>Save to My List</a>
               </div>
-    </div>
 
+
+    </div>
+ 
+   <!-- Error Modal -->
+   <div id="errorModal" class="modal">
+     <!-- Error Modal content -->
+     <div class="modal-content">
+       <span class="close">&times;</span>
+       <h5>Hammer Time...</h5>
+       <p>No Horror Films Match that search.</p>
+       <p>Please adjust your criteria and try again.</p>
+     </div>
+ 
+     <script>
+       var errorModal = document.getElementById("errorModal");
+       var modalSpan = document.getElementsByClassName("close")[0];
+ 
+       // Button to Test Modal - remove this later...
+       var modalBtn = document.getElementById("modalBtn");
+ 
+       modalSpan.onclick = function () {
+         errorModal.style.display = "none";
+       };
+ 
+       window.onclick = function (event) {
+         if (event.target == errorModal) {
+           errorModal.style.display = "none";
+         }
+       };
+     </script>
+   </div>
+
+   
     <footer>
       <h5>Trilogy Film Project</h5>
     </footer>
