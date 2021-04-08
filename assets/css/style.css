@@ -27,7 +27,7 @@ h3 {
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 a {
@@ -38,7 +38,7 @@ header {
   height: 20%;
   background-color: var(--dark);
   text-align: center;
-  color: var(--light);;
+  color: var(--light);
   font-weight: bold;
   font-size: 50px;
   margin-bottom: 10px;
@@ -49,14 +49,14 @@ main {
 }
 
 footer {
-  padding: 10px;
   background-color: var(--dark);
+  color: var(--light);
+  padding: 10px;
   text-align: center;
-  color: var(--light);;
   position: fixed;
-  left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 5;
 }
 
 .tab a.active {
@@ -76,7 +76,15 @@ footer {
 
 .movieListContainer {
   margin: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+.movieListContainer::after {
+  content: '';
+  flex: auto;
+  }
 
 .movieSelectorContainer {
   margin: 40px;
@@ -90,11 +98,15 @@ footer {
 .movieselector,
 .dark-background {
   background-color: var(--dark);
-  color: var(--light);;
+  color: var(--light);
 }
 
 .row .col {
   padding: 0 1rem !important;
+}
+
+.row .col12 {
+  width: none;
 }
 
 .itemTitle {
@@ -162,7 +174,6 @@ footer {
 .card {
   margin: auto;
   background-color: var(--dark);
-  height: 25rem;
 }
 
 .card.large {
@@ -175,10 +186,12 @@ footer {
 }
 .card .card-title {
   text-align: center;
-  font-size: 0.9rem;
-  padding: 6px;
-  color: var(--light);;
-  height: 80px;
+  color: var(--light);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding: 15px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
 .card-image:first-child img {
@@ -192,8 +205,8 @@ footer {
 
 .movie-info {
   padding: 0 !important;
-  position:relative;
-  top:-5px;
+  position: relative;
+  top: -5px;
   line-height: 36px;
 }
 
@@ -210,7 +223,7 @@ footer {
 }
 
 strong {
- color: var(--light);;
+  color: var(--light);
 }
 
 .divider {
@@ -249,7 +262,7 @@ strong {
 
 .select select[multiple] option:hover {
   background-color: var(--darkorange);
-  color: var(--light);;
+  color: var(--light);
 }
 
 .delimiter {
@@ -372,4 +385,18 @@ strong {
   color: var(--dark);
   cursor: pointer;
   text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 350px) {
+  .movieSelectorContainer {
+    margin: 0;
+  }
+  .movieListContainer {
+    margin: 0;
+  }
+  .site-header {
+    margin: 10px;
+  }
 }
