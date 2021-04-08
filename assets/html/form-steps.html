@@ -41,7 +41,7 @@
     </div>
 
     <!-- SubGenre -->
-    <div class="form-wrapper select is-multiple" id="subgenre">
+    <div class="form-wrapper select is-multiple" id="subgenre" style="display: none;">
       <div class="formTitle"><h3>SubGenre:</h3></div>
       <select multiple size="9">
         <option name="subgenre" value="157314">Psychological</option>
@@ -57,7 +57,7 @@
     </div>
 
     <!-- Years -->
-    <div class="form-wrapper select is-multiple" id="years">
+    <div class="form-wrapper select is-multiple" id="years" style="display: none;">
       <div class="formTitle"><h3>Years:</h3></div>
       <select multiple size="9">
         <option name="years" value="2021">2021</option>
@@ -118,7 +118,7 @@
     </div>
 
     <!-- Language -->
-    <div class="form-wrapper select is-multiple" id="language">
+    <div class="form-wrapper select is-multiple" id="language" style="display: none;">
       <div class="formTitle"><h3>Language:</h3></div>
       <select multiple size="9">
         <option name="language" value="en">English</option>
@@ -176,12 +176,12 @@
     </div>
 
     <!-- Movie Selector -->
-    <div class="movieSelectorContainer">
+    <div class="movieSelectorContainer" style="display: none;">
       <div class="row movieListContainer" id="movieselector"></div>
     </div>
 
     <!-- Display Selected Movie -->
-    <div class="selected-movie row">
+    <div class="selected-movie row" style="display: none;">
 
           <div class="col s12 m6 l4 card-image hoverable">
               <img id="poster" src="" class="responsive hoverable" />
@@ -215,6 +215,7 @@
       <h5>Trilogy Film Project</h5>
     </footer>
 
+    <script src="../js/print-movie-list.js"></script>
     <script src="../js/script.js"></script>
   </body>
 </html>
