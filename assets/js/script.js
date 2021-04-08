@@ -93,6 +93,9 @@ function printItemList(movieData) {
   var rowEl = document.querySelector("#movieselector");
 
   for (let i = 0; i < movieData.length; i++) {
+    // if there's no image, skip this movie
+    if (!movieData[i].poster_path) continue;
+
     var itemCardEl = document.createElement("div");
     itemCardEl.classList.add("col", "s6", "m4", "l2");
     var cardEl = document.createElement("div");
