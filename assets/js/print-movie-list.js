@@ -25,10 +25,10 @@ function printItemList(movieData) {
     itemImageEl.setAttribute("src", posterUrl);
     itemCardImageEl.appendChild(itemImageEl);
 
-    const title = movieData[i].title;
+    const title = movieData[i].title || movieData[i].original_name;
     var itemTitleEl = document.createElement("div");
     itemTitleEl.classList.add("card-title", "itemTitle");
-    itemTitleEl.textContent = movieData[i].title;
+    itemTitleEl.textContent = movieData[i].title || movieData[i].original_name;
 
     itemCardImageEl.addEventListener("click", function (event) {
       getOpenMovieDatabaseAPI(title);
