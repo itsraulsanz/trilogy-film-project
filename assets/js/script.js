@@ -9,7 +9,7 @@ var movieSelectedScreen = document.querySelector(".selected-movie");
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
 var urlForm = "https://api.themoviedb.org/3/discover/";
 
-// TYPE
+// Form - TYPE
 if (document.querySelector('option[name="type"]')) {
   document.querySelectorAll('option[name="type"]').forEach((elem) => {
     elem.addEventListener("click", function (event) {
@@ -23,7 +23,7 @@ if (document.querySelector('option[name="type"]')) {
   });
 }
 
-// SUBGENRE
+// Form - SUBGENRE
 if (document.querySelector('option[name="subgenre"]')) {
   document.querySelectorAll('option[name="subgenre"]').forEach((elem) => {
     elem.addEventListener("click", function (event) {
@@ -36,7 +36,7 @@ if (document.querySelector('option[name="subgenre"]')) {
   });
 }
 
-// YEARS
+// Form - YEARS
 if (document.querySelector('option[name="years"]')) {
   document.querySelectorAll('option[name="years"]').forEach((elem) => {
     elem.addEventListener("click", function (event) {
@@ -49,7 +49,7 @@ if (document.querySelector('option[name="years"]')) {
   });
 }
 
-// LANGUAGE
+// Form - LANGUAGE
 if (document.querySelector('option[name="language"]')) {
   document.querySelectorAll('option[name="language"]').forEach((elem) => {
     elem.addEventListener("click", function (event) {
@@ -73,8 +73,6 @@ function getTheMovieDatabase() {
     });
 }
 
-
-
 // OPEN MOVIE DATABASE
 
 function getOpenMovieDatabaseAPI(title) {
@@ -92,6 +90,8 @@ function getOpenMovieDatabaseAPI(title) {
       trickorTreat(data.Ratings);
     });
 }
+
+// Display the movie / serie selected
 
 function displaySelectedMovie(movieData) {
   movieSelectorContainer.style.display = "none";
@@ -115,15 +115,15 @@ function displaySelectedMovie(movieData) {
   var filmSynopsis = document.getElementById("synopsis");
   filmSynopsis.textContent = movieData.overview;
   filmSynopsis.classList.add("filmSynopsis");
-  document.getElementById("back-btn").addEventListener("click", function goBack() {
-    window.history.back();
-    });
   document
-    .getElementById("save-btn")
-    .addEventListener("click", function(e) {
-      e.preventDefault();
-      saveFilmHistory(movieData.id);
+    .getElementById("back-btn")
+    .addEventListener("click", function goBack() {
+      window.history.back();
     });
+  document.getElementById("save-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    saveFilmHistory(movieData.id);
+  });
 }
 
 function displayExtraSelectedMovie(data) {
@@ -138,39 +138,32 @@ function displayExtraSelectedMovie(data) {
   ageCertificate.style.color = "orange";
 }
 
-// TRICK OR TREAT FUNCTION
+// Trick or Treat
+
 function trickorTreat(data) {
   var trickOrTreatInput = document.getElementById("trickortreat");
   var IMDBscore = data[0] && data[0].Value;
   var rottenTomatoesScore = data[1] && data[1].Value;
   var metacriticScore = data[2] && data[2].Value;
- 
+
   // normalises all values out of 100
   // parseFloat takes decimal score and ignores suffix string
-   var imdbParsed = parseFloat(IMDBscore) * 10;
+  var imdbParsed = parseFloat(IMDBscore) * 10;
   var rottenParsed = parseInt(rottenTomatoesScore);
   var metaParsed = parseInt(metacriticScore);
-   console.log("imdb parsed " + imdbParsed);
-   console.log("rotten parsed " + rottenParsed);
-   console.log("meta parsed " + metaParsed);
-  
- // checks error - if not enough score data
- if (Number.isNaN(imdbParsed) || Number.isNaN(rottenParsed) || Number.isNaN(metaParsed)) {
-   trickOrTreatInput.textContent = " Not Enough Data";
-   trickOrTreatInput.setAttribute("class", "spooky");
- 
- } else if (
-     imdbParsed > 50 &&
-     rottenParsed > 50 &&
-     metaParsed > 50
+
+  // checks error - if not enough score data
+  if (
+    Number.isNaN(imdbParsed) ||
+    Number.isNaN(rottenParsed) ||
+    Number.isNaN(metaParsed)
   ) {
+    trickOrTreatInput.textContent = " Not Enough Data";
+    trickOrTreatInput.setAttribute("class", "spooky");
+  } else if (imdbParsed > 50 && rottenParsed > 50 && metaParsed > 50) {
     trickOrTreatInput.textContent = "TREAT!";
     trickOrTreatInput.setAttribute("class", "treat");
-  } else if (
-   imdbParsed < 50 &&
-   rottenParsed < 50 &&
-   metaParsed < 50
-  ) {
+  } else if (imdbParsed < 50 && rottenParsed < 50 && metaParsed < 50) {
     trickOrTreatInput.textContent = "TRICK!";
     trickOrTreatInput.setAttribute("class", "trick");
   } else {
@@ -179,16 +172,14 @@ function trickorTreat(data) {
   }
 }
 
-
 // LOCAL STORAGE
 
 function saveFilmHistory(movieId) {
-  var watchList =
-    JSON.parse(window.localStorage.getItem("watchList")) || [];
+  var watchList = JSON.parse(window.localStorage.getItem("watchList")) || [];
 
   if (!watchList.includes(movieId)) {
     watchList.push(movieId);
   }
-  
-  window.localStorage.setItem("watchList", JSON.stringify(watchList));  
+
+  window.localStorage.setItem("watchList", JSON.stringify(watchList));
 }

@@ -13,7 +13,7 @@ function printItemList(movieData) {
     if (!movieData[i].poster_path) continue;
 
     var itemCardEl = document.createElement("div");
-    itemCardEl.classList.add("col", "s6", "m4", "l2");
+    itemCardEl.classList.add("col", "s12", "m4", "l3", "xl2");
     var cardEl = document.createElement("div");
     cardEl.classList.add("card", "itemSelector");
     var itemCardImageEl = document.createElement("div");
