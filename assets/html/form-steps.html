@@ -52,7 +52,7 @@
       <select multiple size="9">
         <option name="subgenre" value="157314">Psychological</option>
         <option name="subgenre" value="270348">Post apocalyptic</option>
-        <option name="subgenre" value="12339">Slasher (Serial Killer)</option>
+        <option name="subgenre" value="12339">Slasher</option>
         <option name="subgenre" value="6152">Supernatural</option>
         <option name="subgenre" value="9853">Paranormal</option>
         <option name="subgenre" value="1299">Monsters</option>
@@ -197,36 +197,47 @@
     <!-- Display Selected Movie -->
     <div class="selected-movie row" style="display: none">
       <div class="col s12 m6 l4 card-image hoverable">
-        <img id="poster" src="" class="responsive hoverable" />
-      </div>
+          <img id="poster" src="" class="responsive hoverable" />
+        </div>
 
-      <div class="col s12 m6 l8 movie-info" id="font-black">
-        <span class="card-title selected-movie-title" id="film-title"></span>
-        <p><strong>Age Certificate: </strong><span id="age"></span></p>
-        <p><strong>Country/Language: </strong><span id="country"></span></p>
-        <p>
-          <strong>Initially Released: </strong><span id="year-released"></span>
-        </p>
-        <p><strong>Director: </strong><span id="director"></span></p>
-        <p><strong>Run Time: </strong><span id="runtime"></span></p>
-        <p><strong>Trick or Treat?: </strong><span id="trickortreat"></span></p>
-        <!-- <p><strong>Available on: </strong><span id="watchon"></span></p> -->
-        <p class="synopsis-text">
-          <strong>Film synopsis: </strong><span id="synopsis"></span>
-        </p>
-        <a
-          href="#"
-          id="back-btn"
-          class="waves-effect waves-light btn-small btn-save"
-          ><i class="fas fa-backward right"></i>Pick a new Movie</a
-        >
-        <a
-          href="#"
-          id="save-btn"
-          class="waves-effect waves-light btn-small btn-save"
-          ><i class="far fa-surprise right"></i>Save to My List</a
-        >
-      </div>
+          <div class="col s12 m6 l8 movie-info" id="font-black">
+            <span class="card-title selected-movie-title" id="film-title"></span>
+            <div class="details">
+              <span class="strong">Age Certificate: </span><span class="data" id="age"></span>
+            </div>
+            <div class="details">
+              <span class="strong">Country/Language: </span><span class="data" id="country"></span>
+            </div>
+            <div class="details">
+              <span class="strong">Initially Released: </span
+              ><span id="year-released"></span>
+            </div>
+            <div class="details">
+              <span class="strong">Director: </span><span class="data" id="director"></span></p>
+            </div>
+            <div class="details">
+              <span class="strong">Run Time: </span><span class="data" id="runtime"></span></p>
+            </div>
+            <div class="details">
+              <span class="strong trickortreatTitle">Trick or Treat?: </span
+              ><span id="trickortreat"></span>
+            </div>
+            <div class="synopsis-text">
+              <span class="strong">Film synopsis: </strong><span id="synopsis"></span>
+            </div>
+            <a
+            href="#"
+            id="back-btn"
+            class="waves-effect waves-light btn-small btn-save"
+            ><i class="fas fa-backward right"></i>Pick a new Movie</a
+          >
+          <a
+            href="#"
+            id="save-btn"
+            class="waves-effect waves-light btn-small btn-save"
+            ><i class="far fa-surprise right"></i>Save to My List</a
+          >
+          </div>
     </div>
 
     <!-- Error Modal -->
