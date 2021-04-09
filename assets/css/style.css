@@ -82,9 +82,9 @@ footer {
 }
 
 .movieListContainer::after {
-  content: '';
+  content: "";
   flex: auto;
-  }
+}
 
 .movieSelectorContainer {
   margin: 40px;
@@ -195,8 +195,8 @@ footer {
 }
 
 .card-image:first-child img {
-  width: 320px;
   height: auto;
+  text-align: end;
 }
 
 .info-wrapper {
@@ -222,8 +222,10 @@ footer {
   color: var(--dark) !important;
 }
 
-strong {
+.strong {
   color: var(--light);
+  float: left;
+  margin-right: 10px;
 }
 
 .divider {
@@ -276,12 +278,12 @@ strong {
 }
 
 #film-title {
-  font-size: 50px;
+  font-size: 3em;
   color: orange;
   text-align: left;
   display: block;
-  line-height: none;
   margin-bottom: 25px;
+  line-height: 1em;
 }
 
 .synopsis-text {
@@ -389,6 +391,36 @@ strong {
 
 /* MEDIA QUERIES */
 
+@media only screen and (min-width: 901px) {
+  .selected-movie {
+    margin: 25px 20% 50px 20%;
+  }
+  .card-image {
+    text-align: end;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .selected-movie {
+    margin: 25px 70px 50px 70px;
+  }
+  .card-image {
+    text-align: end !important;
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .selected-movie {
+    margin: 25px 25px 50px 25px;
+  }
+  #film-title {
+    font-size: 2.7em;
+    line-height: 35px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
 @media only screen and (max-width: 350px) {
   .movieSelectorContainer {
     margin: 0;
@@ -396,7 +428,38 @@ strong {
   .movieListContainer {
     margin: 0;
   }
-  .site-header {
-    margin: 10px;
+  .btn-header {
+    position: unset;
   }
+  .selected-movie {
+    margin: 25px 8px 50px 8px;
+  }
+  .row .col {
+    padding: 0 0.5rem !important;
+  }
+  .movie-info {
+    margin-top: none;
+    font-size: 0.7em;
+    line-height: 17px;
+  }
+  #film-title {
+    line-height: 17px;
+    margin-top: none;
+    margin-bottom: 10px;
+  }
+  .strong {
+    float: none;
+    display: flow-root;
+  }
+  .details {
+    margin-bottom: 10px;
+  }
+  .trickortreatTitle {
+    margin-bottom: 10px;
+  }
+  .select select[multiple] {
+    width: 80%;
+    text-align: center;
+    font-size: 0.8em;
+}
 }
