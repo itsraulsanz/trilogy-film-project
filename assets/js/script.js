@@ -136,6 +136,8 @@ function displayExtraSelectedMovie(data) {
   var ageCertificate = document.getElementById("age");
   ageCertificate.textContent = data.Rated;
   ageCertificate.style.color = "orange";
+  var yearReleased = document.getElementById("year-released");
+  yearReleased.textContent = data.Released;
 }
 
 // Trick or Treat
