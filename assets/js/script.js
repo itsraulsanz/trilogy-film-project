@@ -63,6 +63,7 @@ if (document.querySelector('option[name="language"]')) {
   });
 }
 
+// Getting the user Criteria
 function getTheMovieDatabase() {
   fetch(urlForm)
     .then(function (response) {
@@ -74,7 +75,6 @@ function getTheMovieDatabase() {
 }
 
 // OPEN MOVIE DATABASE
-
 function getOpenMovieDatabaseAPI(title) {
   movieSelectorContainer.style.display = "none";
   movieSelectedScreen.style.display = "block";
@@ -91,8 +91,7 @@ function getOpenMovieDatabaseAPI(title) {
     });
 }
 
-// Display the movie / serie selected
-
+// Display the Title selected
 function displaySelectedMovie(movieData) {
   movieSelectorContainer.style.display = "none";
   movieSelectedScreen.style.display = "block";
@@ -141,7 +140,6 @@ function displayExtraSelectedMovie(data) {
 }
 
 // Trick or Treat
-
 function trickorTreat(data) {
   var trickOrTreatInput = document.getElementById("trickortreat");
   var IMDBscore = data[0] && data[0].Value;
@@ -174,8 +172,7 @@ function trickorTreat(data) {
   }
 }
 
-// LOCAL STORAGE
-
+// Local Storage
 function saveFilmHistory(movieId) {
   var watchList = JSON.parse(window.localStorage.getItem("watchList")) || [];
 
