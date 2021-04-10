@@ -16,18 +16,21 @@ var urlForm = "https://api.themoviedb.org/3/discover/";
 
 // Form - TYPE
 var typeEl = document.querySelector(".typeList");
-typeEl.addEventListener("click", function (event) {
-  var type = event.target.id;
-  urlForm += type;
-  urlForm += "?api_key=";
-  urlForm += API_KEY;
-  console.log(type)
-  typeContainer.style.display = "none";
-  subgenreContainer.style.display = "flex";
-});
+if (document.getElementById("type")) {
+  typeEl.addEventListener("click", function (event) {
+    var type = event.target.id;
+    urlForm += type;
+    urlForm += "?api_key=";
+    urlForm += API_KEY;
+    typeContainer.style.display = "none";
+    subgenreContainer.style.display = "flex";
+  });
+}
+
 
 // Form - SUBGENRE
 var subgenreEl = document.querySelector(".subgenreList");
+if (document.querySelector("#subgenre")) {
 subgenreEl.addEventListener("click", function (event) {
       var subgenre = event.target.id;
       urlForm += "&genres=horror&with_keywords=";
@@ -35,9 +38,11 @@ subgenreEl.addEventListener("click", function (event) {
       subgenreContainer.style.display = "none";
       yearsContainer.style.display = "flex";
 });
+}
 
 // Form - YEARS
 var yearsEl = document.querySelector(".yearsList");
+if (document.querySelector("#years")) {
 yearsEl.addEventListener("click", function (event) {
     var years = event.target.id;
     urlForm += "&year=";
@@ -45,9 +50,11 @@ yearsEl.addEventListener("click", function (event) {
     yearsContainer.style.display = "none";
     languageContainer.style.display = "flex";
 });
+}
 
 // Form - LANGUAGE
 var languageEl = document.querySelector(".languageList");
+if (document.querySelector("#language")) {
 languageEl.addEventListener("click", function (event) {
   var language = event.target.id;
   urlForm += "&language=";
@@ -56,6 +63,7 @@ languageEl.addEventListener("click", function (event) {
   movieSelectorContainer.style.display = "block";
   getTheMovieDatabase();
 });
+}
 
 // Getting the user Criteria
 function getTheMovieDatabase() {
