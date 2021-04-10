@@ -19,7 +19,7 @@ h5 {
 
 h1 {
   margin: 0;
-  padding: 15px 0 15px 0;
+  padding: 15px 30px 15px 30px;
 }
 
 h3 {
@@ -248,8 +248,8 @@ footer {
 } */
 
 .typeList, .subgenreList, .yearsList, .languageList {
-  width: 30%;
-  max-height: 50vh;
+  width: 30vw;
+  max-height: 60vh;
   text-align: center;
   height: auto;
   padding: 0;
@@ -450,6 +450,9 @@ footer {
     margin-top: 30px;
     margin-bottom: 10px;
   }
+  .typeList, .subgenreList, .yearsList, .languageList {
+    width: 80vw;
+    }
 }
 
 @media only screen and (max-width: 350px) {
