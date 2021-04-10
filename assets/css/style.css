@@ -407,6 +407,10 @@ footer {
   .card-image {
     text-align: end !important;
   }
+  .btn-header {
+    position: unset !important;
+    margin-top: -30px;
+  }
 }
 
 @media only screen and (max-width: 601px) {
@@ -427,9 +431,6 @@ footer {
   }
   .movieListContainer {
     margin: 0;
-  }
-  .btn-header {
-    position: unset;
   }
   .selected-movie {
     margin: 25px 8px 50px 8px;
