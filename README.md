@@ -130,7 +130,8 @@ The application has been through a WAVE accessibility checker to ensure it confo
 
 A gif visual demonstration is also provided as a guide:
 
-<img src="./assets/trilogy-film-project/assets/images/HAMMERED HORROR DEMO.gif">
+<img src="./assets/images/HAMMERED HORROR DEMO.gif">
+
 
 ---
 
