@@ -4,64 +4,58 @@ var yearsEl = document.querySelector("#years");
 var languageEl = document.querySelector("#language");
 var movieSelectorContainer = document.querySelector(".movieSelectorContainer");
 var movieSelectedScreen = document.querySelector(".selected-movie");
+var typeContainer = document.getElementById("type");
+var subgenreContainer = document.getElementById("subgenre");
+var yearsContainer = document.getElementById("years");
+var languageContainer = document.getElementById("language");
+
 
 // Getting the movie criteria
 var API_KEY = "7557a7686c1be5c7114f3c419653ff79";
 var urlForm = "https://api.themoviedb.org/3/discover/";
 
 // Form - TYPE
-if (document.querySelector('option[name="type"]')) {
-  document.querySelectorAll('option[name="type"]').forEach((elem) => {
-    elem.addEventListener("click", function (event) {
-      var type = event.target.value;
-      urlForm += type;
-      urlForm += "?api_key=";
-      urlForm += API_KEY;
-      typeEl.style.display = "none";
-      subgenreEl.style.display = "flex";
-    });
-  });
-}
+var typeEl = document.querySelector(".typeList");
+typeEl.addEventListener("click", function (event) {
+  var type = event.target.id;
+  urlForm += type;
+  urlForm += "?api_key=";
+  urlForm += API_KEY;
+  console.log(type)
+  typeContainer.style.display = "none";
+  subgenreContainer.style.display = "flex";
+});
 
 // Form - SUBGENRE
-if (document.querySelector('option[name="subgenre"]')) {
-  document.querySelectorAll('option[name="subgenre"]').forEach((elem) => {
-    elem.addEventListener("click", function (event) {
-      var subgenre = event.target.value;
+var subgenreEl = document.querySelector(".subgenreList");
+subgenreEl.addEventListener("click", function (event) {
+      var subgenre = event.target.id;
       urlForm += "&genres=horror&with_keywords=";
       urlForm += subgenre;
-      subgenreEl.style.display = "none";
-      yearsEl.style.display = "flex";
-    });
-  });
-}
+      subgenreContainer.style.display = "none";
+      yearsContainer.style.display = "flex";
+});
 
 // Form - YEARS
-if (document.querySelector('option[name="years"]')) {
-  document.querySelectorAll('option[name="years"]').forEach((elem) => {
-    elem.addEventListener("click", function (event) {
-      var years = event.target.value;
-      urlForm += "&year=";
-      urlForm += years;
-      yearsEl.style.display = "none";
-      languageEl.style.display = "flex";
-    });
-  });
-}
+var yearsEl = document.querySelector(".yearsList");
+yearsEl.addEventListener("click", function (event) {
+    var years = event.target.id;
+    urlForm += "&year=";
+    urlForm += years;
+    yearsContainer.style.display = "none";
+    languageContainer.style.display = "flex";
+});
 
 // Form - LANGUAGE
-if (document.querySelector('option[name="language"]')) {
-  document.querySelectorAll('option[name="language"]').forEach((elem) => {
-    elem.addEventListener("click", function (event) {
-      var language = event.target.value;
-      urlForm += "&language=";
-      urlForm += language;
-      languageEl.style.display = "none";
-      movieSelectorContainer.style.display = "block";
-      getTheMovieDatabase();
-    });
-  });
-}
+var languageEl = document.querySelector(".languageList");
+languageEl.addEventListener("click", function (event) {
+  var language = event.target.id;
+  urlForm += "&language=";
+  urlForm += language;
+  languageContainer.style.display = "none";
+  movieSelectorContainer.style.display = "block";
+  getTheMovieDatabase();
+});
 
 // Getting the user Criteria
 function getTheMovieDatabase() {
