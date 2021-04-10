@@ -79,7 +79,7 @@ function getOpenMovieDatabaseAPI(title) {
   movieSelectorContainer.style.display = "none";
   movieSelectedScreen.style.display = "block";
   var API_KEY = "930706b3";
-  var requestURL = `http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`;
+  var requestURL = `https://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`;
 
   fetch(requestURL)
     .then(function (response) {
