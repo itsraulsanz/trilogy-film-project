@@ -36,157 +36,145 @@
     <!-- Type -->
     <div class="form-wrapper select is-multiple" id="type">
       <div class="formTitle"><h3>Type:</h3></div>
-      <select multiple size="2">
-        <option name="type" value="movie" id="movie">Movie</option>
-        <option name="type" value="tv" id="tv">Tv Series</option>
-      </select>
+        <ul class="typeList">
+          <li id="movie">Movie</li>
+          <li id="tv">Tv Series</li>
+        </ul>
     </div>
 
     <!-- SubGenre -->
-    <div
-      class="form-wrapper select is-multiple"
-      id="subgenre"
-      style="display: none"
-    >
+    <div class="form-wrapper select is-multiple" id="subgenre" style="display: none">
       <div class="formTitle"><h3>SubGenre:</h3></div>
-      <select multiple size="9">
-        <option name="subgenre" value="157314">Psychological</option>
-        <option name="subgenre" value="270348">Post apocalyptic</option>
-        <option name="subgenre" value="12339">Slasher</option>
-        <option name="subgenre" value="6152">Supernatural</option>
-        <option name="subgenre" value="9853">Paranormal</option>
-        <option name="subgenre" value="1299">Monsters</option>
-        <option name="subgenre" value="10292">Gore</option>
-        <option name="subgenre" value="12377">Zombies</option>
-        <option name="subgenre" value="11001">Religious</option>
-      </select>
+        <ul class="subgenreList">
+        <li name="subgenre" id="157314">Psychological</li>
+        <li name="subgenre" id="270348">Post apocalyptic</li>
+        <li name="subgenre" id="12339">Slasher</li>
+        <li name="subgenre" id="6152">Supernatural</li>
+        <li name="subgenre" id="9853">Paranormal</li>
+        <li name="subgenre" id="1299">Monsters</li>
+        <li name="subgenre" id="10292">Gore</li>
+        <li name="subgenre" id="12377">Zombies</li>
+        <li name="subgenre" id="11001">Religious</li>
+        </ul>
     </div>
 
     <!-- Years -->
-    <div
-      class="form-wrapper select is-multiple"
-      id="years"
-      style="display: none"
-    >
+    <div class="form-wrapper select is-multiple" id="years" style="display: none">
       <div class="formTitle"><h3>Years:</h3></div>
-      <select multiple size="9">
-        <option name="years" value="2021">2021</option>
-        <option name="years" value="2020">2020</option>
-        <option name="years" value="2019">2019</option>
-        <option name="years" value="2018">2018</option>
-        <option name="years" value="2017">2017</option>
-        <option name="years" value="2016">2016</option>
-        <option name="years" value="2015">2015</option>
-        <option name="years" value="2014">2014</option>
-        <option name="years" value="2013">2013</option>
-        <option name="years" value="2012">2012</option>
-        <option name="years" value="2011">2011</option>
-        <option name="years" value="2010">2010</option>
-        <option name="years" value="2009">2009</option>
-        <option name="years" value="2008">2008</option>
-        <option name="years" value="2007">2007</option>
-        <option name="years" value="2006">2006</option>
-        <option name="years" value="2005">2005</option>
-        <option name="years" value="2004">2004</option>
-        <option name="years" value="2003">2003</option>
-        <option name="years" value="2002">2002</option>
-        <option name="years" value="2001">2001</option>
-        <option name="years" value="2000">2000</option>
-        <option name="years" value="1999">1999</option>
-        <option name="years" value="1998">1998</option>
-        <option name="years" value="1997">1997</option>
-        <option name="years" value="1996">1996</option>
-        <option name="years" value="1995">1995</option>
-        <option name="years" value="1994">1994</option>
-        <option name="years" value="1993">1993</option>
-        <option name="years" value="1992">1992</option>
-        <option name="years" value="1991">1991</option>
-        <option name="years" value="1990">1990</option>
-        <option name="years" value="1989">1989</option>
-        <option name="years" value="1988">1988</option>
-        <option name="years" value="1987">1987</option>
-        <option name="years" value="1986">1986</option>
-        <option name="years" value="1985">1985</option>
-        <option name="years" value="1984">1984</option>
-        <option name="years" value="1983">1983</option>
-        <option name="years" value="1982">1982</option>
-        <option name="years" value="1981">1981</option>
-        <option name="years" value="1980">1980</option>
-        <option name="years" value="1979">1979</option>
-        <option name="years" value="1978">1978</option>
-        <option name="years" value="1977">1977</option>
-        <option name="years" value="1976">1976</option>
-        <option name="years" value="1975">1975</option>
-        <option name="years" value="1974">1974</option>
-        <option name="years" value="1973">1973</option>
-        <option name="years" value="1972">1972</option>
-        <option name="years" value="1971">1971</option>
-        <option name="years" value="1970">1970</option>
-        <option name="years" value="1969">1969</option>
-        <option name="years" value="1968">1968</option>
-      </select>
+        <ul class="yearsList">
+          <li name="years" id="2021">2021</li>
+          <li name="years" id="2020">2020</li>
+          <li name="years" id="2019">2019</li>
+          <li name="years" id="2018">2018</li>
+          <li name="years" id="2017">2017</li>
+          <li name="years" id="2016">2016</li>
+          <li name="years" id="2015">2015</li>
+          <li name="years" id="2014">2014</li>
+          <li name="years" id="2013">2013</li>
+          <li name="years" id="2012">2012</li>
+          <li name="years" id="2011">2011</li>
+          <li name="years" id="2010">2010</li>
+          <li name="years" id="2009">2009</li>
+          <li name="years" id="2008">2008</li>
+          <li name="years" id="2007">2007</li>
+          <li name="years" id="2006">2006</li>
+          <li name="years" id="2005">2005</li>
+          <li name="years" id="2004">2004</li>
+          <li name="years" id="2003">2003</li>
+          <li name="years" id="2002">2002</li>
+          <li name="years" id="2001">2001</li>
+          <li name="years" id="2000">2000</li>
+          <li name="years" id="1999">1999</li>
+          <li name="years" id="1998">1998</li>
+          <li name="years" id="1997">1997</li>
+          <li name="years" id="1996">1996</li>
+          <li name="years" id="1995">1995</li>
+          <li name="years" id="1994">1994</li>
+          <li name="years" id="1993">1993</li>
+          <li name="years" id="1992">1992</li>
+          <li name="years" id="1991">1991</li>
+          <li name="years" id="1990">1990</li>
+          <li name="years" id="1989">1989</li>
+          <li name="years" id="1988">1988</li>
+          <li name="years" id="1987">1987</li>
+          <li name="years" id="1986">1986</li>
+          <li name="years" id="1985">1985</li>
+          <li name="years" id="1984">1984</li>
+          <li name="years" id="1983">1983</li>
+          <li name="years" id="1982">1982</li>
+          <li name="years" id="1981">1981</li>
+          <li name="years" id="1980">1980</li>
+          <li name="years" id="1979">1979</li>
+          <li name="years" id="1978">1978</li>
+          <li name="years" id="1977">1977</li>
+          <li name="years" id="1976">1976</li>
+          <li name="years" id="1975">1975</li>
+          <li name="years" id="1974">1974</li>
+          <li name="years" id="1973">1973</li>
+          <li name="years" id="1972">1972</li>
+          <li name="years" id="1971">1971</li>
+          <li name="years" id="1970">1970</li>
+          <li name="years" id="1969">1969</li>
+          <li name="years" id="1968">1968</li>
+        </ul>
     </div>
 
     <!-- Language -->
-    <div
-      class="form-wrapper select is-multiple"
-      id="language"
-      style="display: none"
-    >
+    <div class="form-wrapper select is-multiple" id="language" style="display: none">
       <div class="formTitle"><h3>Language:</h3></div>
-      <select multiple size="9">
-        <option name="language" value="en">English</option>
-        <option name="language" value="fr">French</option>
-        <option name="language" value="it">Italian</option>
-        <option name="language" value="pt">Portuguese</option>
-        <option name="language" value="es">Spanish</option>
-        <option name="language" value="zh">Mandarin</option>
-        <option name="language" value="ar">Arabic</option>
-        <option name="language" value="de">German</option>
-        <option name="language" value="hi">Hindi</option>
-        <option name="language" value="ru">Russian</option>
-        <option class="delimiter" name="language" value="ja">Japanese</option>
-        <option name="language" value="ca">Catalan</option>
-        <option name="language" value="cs">Czech</option>
-        <option name="language" value="cy">Welsh</option>
-        <option name="language" value="da">Danish</option>
-        <option name="language" value="et">Estonian</option>
-        <option name="language" value="eu">Basque</option>
-        <option name="language" value="fi">Finnish</option>
-        <option name="language" value="ga">Irish</option>
-        <option name="language" value="gl">Gallegan</option>
-        <option name="language" value="hr">Croatian</option>
-        <option name="language" value="hu">Hungarian</option>
-        <option name="language" value="is">Icelandic</option>
-        <option name="language" value="ko">Korean</option>
-        <option name="language" value="ku">Kurdish</option>
-        <option name="language" value="lv">Latvian</option>
-        <option name="language" value="lt">Lithuanian</option>
-        <option name="language" value="lb">Letzeburgesch</option>
-        <option name="language" value="mt">Maltese</option>
-        <option name="language" value="mo">Moldavian</option>
-        <option name="language" value="mn">Mongolian</option>
-        <option name="language" value="ne">Nepali</option>
-        <option name="language" value="nl">Dutch</option>
-        <option name="language" value="no">Norwegian</option>
-        <option name="language" value="pl">Polish</option>
-        <option name="language" value="ro">Romanian</option>
-        <option name="language" value="si">Sinhalese</option>
-        <option name="language" value="sk">Slovak</option>
-        <option name="language" value="sl">Slovenian</option>
-        <option name="language" value="sm">Samoan</option>
-        <option name="language" value="sd">Sindhi</option>
-        <option name="language" value="sq">Albanian</option>
-        <option name="language" value="sr">Serbian</option>
-        <option name="language" value="sv">Swedish</option>
-        <option name="language" value="th">Thai</option>
-        <option name="language" value="tr">Turkish</option>
-        <option name="language" value="uk">Ukrainian</option>
-        <option name="language" value="vi">Vietnamese</option>
-        <option name="language" value="br">Bulgarian</option>
-        <option name="language" value="cn">Cantonese</option>
-        <option name="language" value="el">Greek</option>
-      </select>
+      <ul class="languageList" size="9">
+        <li name="language" id="en">English</li>
+        <li name="language" id="fr">French</li>
+        <li name="language" id="it">Italian</li>
+        <li name="language" id="pt">Portuguese</li>
+        <li name="language" id="es">Spanish</li>
+        <li name="language" id="zh">Mandarin</li>
+        <li name="language" id="ar">Arabic</li>
+        <li name="language" id="de">German</li>
+        <li name="language" id="hi">Hindi</li>
+        <li name="language" id="ru">Russian</li>
+        <li class="delimiter" name="language" id="ja">Japanese</li>
+        <li name="language" id="ca">Catalan</li>
+        <li name="language" id="cs">Czech</li>
+        <li name="language" id="cy">Welsh</li>
+        <li name="language" id="da">Danish</li>
+        <li name="language" id="et">Estonian</li>
+        <li name="language" id="eu">Basque</li>
+        <li name="language" id="fi">Finnish</li>
+        <li name="language" id="ga">Irish</li>
+        <li name="language" id="gl">Gallegan</li>
+        <li name="language" id="hr">Croatian</li>
+        <li name="language" id="hu">Hungarian</li>
+        <li name="language" id="is">Icelandic</li>
+        <li name="language" id="ko">Korean</li>
+        <li name="language" id="ku">Kurdish</li>
+        <li name="language" id="lv">Latvian</li>
+        <li name="language" id="lt">Lithuanian</li>
+        <li name="language" id="lb">Letzeburgesch</li>
+        <li name="language" id="mt">Maltese</li>
+        <li name="language" id="mo">Moldavian</li>
+        <li name="language" id="mn">Mongolian</li>
+        <li name="language" id="ne">Nepali</li>
+        <li name="language" id="nl">Dutch</li>
+        <li name="language" id="no">Norwegian</li>
+        <li name="language" id="pl">Polish</li>
+        <li name="language" id="ro">Romanian</li>
+        <li name="language" id="si">Sinhalese</li>
+        <li name="language" id="sk">Slovak</li>
+        <li name="language" id="sl">Slovenian</li>
+        <li name="language" id="sm">Samoan</li>
+        <li name="language" id="sd">Sindhi</li>
+        <li name="language" id="sq">Albanian</li>
+        <li name="language" id="sr">Serbian</li>
+        <li name="language" id="sv">Swedish</li>
+        <li name="language" id="th">Thai</li>
+        <li name="language" id="tr">Turkish</li>
+        <li name="language" id="uk">Ukrainian</li>
+        <li name="language" id="vi">Vietnamese</li>
+        <li name="language" id="br">Bulgarian</li>
+        <li name="language" id="cn">Cantonese</li>
+        <li name="language" id="el">Greek</li>
+      </ul>
     </div>
 
     <!-- Movie Selector -->

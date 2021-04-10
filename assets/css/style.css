@@ -243,6 +243,33 @@ footer {
   color: var(--dark);
 }
 
+/* .options {
+
+} */
+
+.typeList, .subgenreList, .yearsList, .languageList {
+  width: 30%;
+  max-height: 50vh;
+  text-align: center;
+  height: auto;
+  padding: 0;
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-radius: 4px;
+  color: #363636;
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+}
+
+.typeList li, .subgenreList li, .yearsList li, .languageList li {
+  padding: .5em 1em;
+}
+
+.typeList li:hover, .subgenreList li:hover, .yearsList li:hover, .languageList li:hover {
+  background-color: var(--darkorange);
+  color: var(--light);
+}
+
 .form-wrapper {
   display: flex;
   flex-direction: column;
