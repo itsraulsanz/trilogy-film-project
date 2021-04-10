@@ -19,7 +19,7 @@ The developers developed initial project initiation concepts based upon the MVP 
 
 ### Design
 
-! [Wireframes] (assets/images/wireframes.png)
+! [Wireframes] <img src="./assets/images/wireframes.png">
 
 The application was designed using wireframes to show the user making the different selections.
 
@@ -69,43 +69,43 @@ Git hub was used as the repository to store, control, create branches and resolv
 
 Home screen
 The user is presented with the home screen and is able to make their movie and TV series selections.
-! [Homescreen] (assets/images/homescreen.png)
+! [Homescreen] <img src="./assets/images/homescreen.png">
 
 ### Sub-genre.
 
 The user can select the different type of Horror Films for example Psychological, Slasher etc
 
-! [Sub-genre] (assets\images\Screenshot 2021-04-09 at 21.02.23.png)
+! [Sub-genre] <img src="./assets/images/Screenshot 2021-04-09 at 21.02.23.png">
 
 ### Year.
 
 The user can select the year of the title.
 
-! [Year] (assets\images\Screenshot 2021-04-09 at 21.43.52.png)
+! [Year] <img src="./assets/images/Screenshot 2021-04-09 at 21.43.52.png">
 
 ### Language.
 
 The user can then select a film language.
 
-! [Language] (assets\images\Screenshot 2021-04-09 at 21.44.58.png)
+! [Language] <img src="./assets/images/Screenshot 2021-04-09 at 21.44.58.png">
 
 ### Card Selector
 
 The user can then see a list of movies they can click and select.
 
-! [Film List] (assets\images\Screenshot 2021-04-09 at 21.52.05.png)
+! [Film List] <img src="./assets/images/Screenshot 2021-04-09 at 21.52.05.png">
 
 ### Movie Card list
 
 The user can click and select the individual card details and view the film cover, cast, director etc. Also, the API’s check the ratings and provide the user with a recommendation if the film is a trick or treat.
 
-! [Film] (assets\images\Screenshot 2021-04-09 at 22.24.49.png)
+! [Film] <img src="./assets\images/Screenshot 2021-04-09 at 22.24.49.png">
 
 ### Local storage.
 
 The user can then click on my list and view a saved copy of their films.
 
-! [saved list] (assets\images\save list.png)
+! [saved list] <img src="./assets/images/save list.png">
 
 ## Areas for future development.
 
@@ -126,7 +126,7 @@ The application has been through a WAVE accessibility checker to ensure it confo
 
 A gif visual demonstration is also provided as a guide:
 
-GIF GUIDE: ![gif demo](assets/trilogy-film-project/assets/images/HAMMEREDHORROR DEMO.gif)
+GIF GUIDE: ![gif demo]<img src="./assets/trilogy-film-project/assets/images/HAMMEREDHORROR DEMO.gif">
 
 ======
 
