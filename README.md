@@ -6,7 +6,7 @@ Technology used includes HTML, JavaScript, Server Side APi’s and css framework
 
 ## Links
 
-- Deployed Application: [GitHub](https://itsraulsanz.github.io/trilogy-film-project//index.html)
+- Deployed Application: [GitHub](https://itsraulsanz.github.io/trilogy-film-project/index.html)
 - Repository: [GitHub](https://github.com/itsraulsanz/trilogy-film-project)
 - In case of sensitive bugs like security vulnerabilities, please contact luar_znas@hotmail.com. We value your effort to improve the security and privacy of this project.
 
