@@ -6,10 +6,9 @@ Technology used includes HTML, JavaScript, Server Side APi’s and css framework
 
 ## Links
 
-- Deployed Application: [GitHub](https://thomwilliams.github.io/trilogy-film-project/index.html)
-- Repository: [GitHub](https://github.com/ThomWilliams/trilogy-film-project)
-- Issue tracker: [GitHub](https://github.com/ThomWilliams/trilogy-film-project/issues)
-  - In case of sensitive bugs like security vulnerabilities, please contact thomwilliams1990@gmail.com. We value your effort to improve the security and privacy of this project.
+- Deployed Application: [GitHub](https://itsraulsanz.github.io/trilogy-film-project//index.html)
+- Repository: [GitHub](https://github.com/itsraulsanz/trilogy-film-project)
+- In case of sensitive bugs like security vulnerabilities, please contact luar_znas@hotmail.com. We value your effort to improve the security and privacy of this project.
 
 ## Minimum Viable Product:
 
@@ -118,13 +117,6 @@ The user can access to their list and view a saved copy of their films and serie
 * Find ways to eradicate any discrepancies in the data provided (e.g., if name of director is not provided by the API).
 * Further development of “Trick” Or “Treat” rating rules and data comparisons.
 * Fright factor rating - a scale of how scary a film / series.
-
-
-## Accessibility
-
-WAVE
-The application has been through a WAVE accessibility checker to ensure it conforms to accessibility requirements for disabled users.
-[Wave](https://wave.webaim.org/report#/https://thomwilliams.github.io/trilogy-film-project/index.html)
 
 ## GIF
 
